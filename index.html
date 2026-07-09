@@ -1,0 +1,4816 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ananya Sharedalal — Independent Researcher</title>
+  <meta name="description"
+    content="Ananya Sharedalal — Independent Researcher, Mumbai. Historical narratives, developmental economics, and the social concerns of communities." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+    rel="stylesheet" />
+  <style>
+    /* ============================================================
+     Ananya Sharedalal — single-file replica
+     Design language: aged parchment, ink serif type, scholarly.
+     ============================================================ */
+
+    :root {
+      --parchment: #f3e9d2;
+      --parchment-deep: white;
+      --paper: #fbf6ea;
+      --ink: #2a2118;
+      --ink-soft: #4a3f30;
+      --ink-faint: #6d6047;
+      --line: #cdbd97;
+      --oxblood: #7a2e26;
+      --oxblood-deep: #5c211b;
+      --gold: #9a7b32;
+      --shadow: rgba(42, 33, 24, .18);
+      --serif-display: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+      --serif-body: "EB Garamond", Georgia, "Times New Roman", serif;
+      --maxw: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    html,
+    body {
+      overflow-x: hidden;
+      max-width: 100%;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--serif-body);
+      color: var(--ink);
+      background: var(--parchment);
+      font-size: 19px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    /* subtle paper grain */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      opacity: .5;
+      background-image:
+        radial-gradient(circle at 20% 30%, rgba(154, 123, 50, .05), transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(122, 46, 38, .04), transparent 45%);
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: var(--oxblood);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--oxblood-deep);
+    }
+
+    .wrap {
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 0 28px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ---------- Header / Nav ---------- */
+    header.site {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      background: transparent;
+      border-bottom: 1px solid transparent;
+      transition: background .3s ease, border-color .3s ease;
+    }
+
+    header.site.solid {
+      background: rgba(243, 233, 210, .92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    header.site .wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+      gap: 14px;
+    }
+
+    @media (max-width:768px) {
+      header.site .wrap {
+        flex-wrap: wrap;
+        height: auto;
+        padding-top: 14px;
+        padding-bottom: 10px;
+        row-gap: 8px;
+      }
+
+      .brand-area {
+        flex: 1 1 100%;
+        overflow: hidden;
+      }
+
+      .brand-back,
+      .brand {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        min-width: 0;
+      }
+
+      nav.main {
+        flex: 1 1 100%;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        justify-content: flex-start;
+        gap: 20px;
+        padding-bottom: 2px;
+      }
+
+      nav.main a {
+        white-space: nowrap;
+        flex-shrink: 0;
+      }
+
+      .home-hero-inner,
+      .proj-hero-inner,
+      .contact-hero-inner,
+      .research-hero-inner,
+      .themes-hero-inner,
+      .videos-hero-inner,
+      .mentions-hero-inner,
+      .paper-hero-inner,
+      .asha-hero-inner {
+        padding-top: 140px;
+      }
+
+      .findings-dark,
+      .theme-band-inner,
+      .video-grid,
+      .asha-band-inner {
+        padding-top: 60px;
+        padding-bottom: 60px;
+      }
+
+      .mentions-empty,
+      .mentions-ongoing {
+        padding-top: 70px;
+        padding-bottom: 70px;
+      }
+
+      .paper-content-inner {
+        padding-top: 70px;
+        padding-bottom: 90px;
+      }
+
+      section.page.block {
+        padding-top: 130px;
+      }
+    }
+
+    .brand {
+      font-family: var(--serif-display);
+      font-size: 1.55rem;
+      font-weight: 600;
+      letter-spacing: .02em;
+      color: #f3e9d2;
+      cursor: pointer;
+      transition: color .3s ease;
+    }
+
+    header.site.solid .brand {
+      color: var(--ink);
+    }
+
+    nav.main {
+      display: flex;
+      gap: 34px;
+      align-items: center;
+    }
+
+    nav.main a {
+      font-family: var(--serif-display);
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: #e7dcc9;
+      letter-spacing: .03em;
+      cursor: pointer;
+      position: relative;
+      padding: 4px 0;
+      transition: color .3s ease;
+    }
+
+    header.site.solid nav.main a {
+      color: var(--ink-soft);
+    }
+
+    nav.main a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      height: 1.5px;
+      width: 0;
+      background: #C97A01;
+      transition: width .25s ease;
+    }
+
+    nav.main a:hover,
+    nav.main a.active {
+      color: #C97A01;
+    }
+
+    header.site.solid nav.main a:hover,
+    header.site.solid nav.main a.active {
+      color: #C97A01;
+    }
+
+    nav.main a.active::after,
+    nav.main a:hover::after {
+      width: 100%;
+    }
+
+    /* ---------- Page mechanics ---------- */
+    .page {
+      display: none;
+      animation: fade .5s ease;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    @keyframes fade {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    /* ---------- Hero ---------- */
+    .hero {
+      position: relative;
+    }
+
+    .hero-img {
+      width: 100%;
+      height: clamp(300px, 52vh, 560px);
+      object-fit: cover;
+      filter: sepia(.12) saturate(1.05);
+    }
+
+    .hero-frame {
+      border-bottom: 1px solid var(--line);
+    }
+
+    /* ---------- Home hero: text over background image ---------- */
+    .home-hero {
+      position: relative;
+      min-height: 100vh;
+      /* 100vh makes it fill the screen like the screenshot */
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      border-bottom: none;
+      /* Removed the hard line to match the smooth fade in the screenshot */
+    }
+
+    .home-hero-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: sepia(.15) saturate(1.1) brightness(0.45);
+    }
+
+    .home-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      /* Replaced the heavy 90deg black gradient with a subtle radial vignette to reveal the texture */
+      background: radial-gradient(circle at center, transparent 0%, rgba(20, 10, 0, 0.7) 100%);
+      background-color: rgba(30, 15, 0, 0.2);
+    }
+
+    .home-hero-inner {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 40px clamp(28px, 8vw, 15%);
+      text-align: left;
+    }
+
+    .home-hero-inner .eyebrow {
+      color: #d18728;
+      /* Warmer golden-orange */
+      font-size: 0.8rem;
+      letter-spacing: 0.25em;
+    }
+
+    .home-hero-inner h1 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(4.5rem, 9vw, 8.5rem);
+      /* Increased scale to match screenshot impact */
+      font-weight: 400;
+      line-height: 0.95;
+      /* Tighter line-height */
+      margin: 0.15em 0 0;
+      letter-spacing: 0;
+    }
+
+    .home-hero-inner h1 .n-first {
+      color: #f3e9d2;
+      font-style: normal;
+    }
+
+    .home-hero-inner h1 .n-last {
+      color: #d18728;
+      font-style: italic;
+    }
+
+    .home-hero-inner .rule {
+      margin: 32px 0 32px;
+      background: #d18728;
+      width: 60px;
+      /* Shorter line */
+      height: 1px;
+      /* Thinner line */
+      opacity: 1;
+    }
+
+    .hero-lede {
+      max-width: 480px;
+      margin: 0;
+      font-size: clamp(1rem, 2vw, 1.1rem);
+      color: #d0c8b6;
+      line-height: 1.8;
+    }
+
+    /* ---------- Project hero (full-screen image + overlay text) ---------- */
+    .proj-hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .proj-hero-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .proj-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(90deg, rgba(20, 10, 0, .78) 0%, rgba(20, 10, 0, .55) 40%, rgba(20, 10, 0, .12) 75%, rgba(20, 10, 0, .35) 100%);
+    }
+
+    .proj-hero-inner {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 40px clamp(28px, 5vw, 80px);
+      text-align: left;
+    }
+
+    .proj-hero-inner .eyebrow {
+      color: #d18728;
+    }
+
+    .proj-hero-inner h1 {
+      font-family: var(--serif-display);
+      font-weight: 400;
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      line-height: .98;
+      margin: .12em 0 .1em;
+      color: #f6efe0;
+      letter-spacing: 0;
+    }
+
+    .proj-hero-lede {
+      max-width: 540px;
+      margin: 0 0 40px;
+      font-size: clamp(1.05rem, 2vw, 1.3rem);
+      color: #e4dccb;
+      line-height: 1.7;
+    }
+
+    .btn-outline {
+      display: inline-block;
+      font-family: var(--serif-display);
+      font-size: 1.05rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: #f6efe0;
+      border: 1px solid rgba(246, 239, 224, .6);
+      padding: 16px 34px;
+      cursor: pointer;
+      transition: background .25s ease, color .25s ease, border-color .25s ease;
+    }
+
+    .btn-outline:hover {
+      background: #d18728;
+      border-color: #d18728;
+      color: #1e1208;
+    }
+
+    /* ---------- Contact hero ---------- */
+    .contact-hero {
+      position: relative;
+      min-height: 65vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background-color: #1E1208;
+    }
+
+    .contact-hero-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.3;
+    }
+
+    .contact-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      filter: sepia(.15) saturate(1.1) brightness(0.45);
+      background: linear-gradient(90deg, rgba(20, 10, 0, .54) 0%, rgba(20, 10, 0, .52) 45%, rgba(20, 10, 0, .58) 100%);
+    }
+
+    .contact-hero-inner {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px clamp(28px, 5vw, 80px);
+      text-align: left;
+    }
+
+    .cta-eyebrow {
+      font-family: var(--serif-body);
+      font-size: .8rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: #C97A01;
+      margin: 0 0 1.5rem;
+    }
+
+    .cta-title {
+      font-family: var(--serif-display);
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      font-weight: 400;
+      line-height: 1.05;
+      color: var(--parchment);
+      margin: 0 0 2.5rem;
+    }
+
+    .cta-rule {
+      width: 40px;
+      height: 2px;
+      background: #C97A01;
+      margin-bottom: 2rem;
+    }
+
+    .cta-lede {
+      font-family: var(--serif-body);
+      font-size: 1.2rem;
+      line-height: 1.8;
+      color: rgba(245, 237, 214, .7);
+      max-width: 580px;
+      margin: 0;
+    }
+
+    /* ---------- Contact body (two-column reach-out) ---------- */
+    .contact-body {
+      background: var(--paper);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 5rem;
+      align-items: start;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .contact-intro {
+      font-family: "" Crimson Text", serif";
+      font-size: 1.15rem;
+      line-height: 1.9;
+      color: #1e1208;
+      margin-bottom: 2rem;
+    }
+
+    .contact-divider {
+      width: 40px;
+      height: 1px;
+      background: #C97A01;
+      margin: 0 0 1.5rem;
+    }
+
+    .contact-label {
+      font-family: var(--serif-body);
+      font-size: .85rem;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      margin: 1.5rem 0 .4rem;
+    }
+
+    .contact-left .contact-label {
+      margin-top: 0;
+    }
+
+    .contact-email {
+      font-family: var(--serif-display);
+      font-size: 1.5rem;
+      color: #C97A01;
+      text-decoration: none;
+      display: inline-block;
+      word-break: break-word;
+    }
+
+    .contact-email:hover {
+      color: #b0680f;
+    }
+
+    .reach-list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .reach-item {
+      padding: 1.25rem 0;
+      border-bottom: 1px solid #E8DFD0;
+    }
+
+    .reach-item.last {
+      border-bottom: none;
+    }
+
+    .reach-item h3 {
+      font-family: "Cormorant Garamond, serif";
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #1e1208;
+      line-height: 1.3;
+      margin-bottom: 0.35rem;
+    }
+
+    .reach-item p {
+      font-family: var(--serif-body);
+      font-size: .98rem;
+      line-height: 1.65;
+      color: var(--ink-faint);
+      margin: 0;
+    }
+
+    /* ---------- Research page (hero, stats, methodology, findings, data) ---------- */
+    .research-hero {
+      position: relative;
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .research-hero-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.3;
+    }
+
+    .research-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(90deg, rgba(20, 10, 0, .86) 0%, rgba(20, 10, 0, .62) 45%, rgba(20, 10, 0, .25) 100%);
+    }
+
+    .research-hero-inner {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 40px clamp(28px, 5vw, 80px);
+      text-align: left;
+    }
+
+    .research-hero-inner .eyebrow {
+      color: #C97A01;
+    }
+
+    .research-title {
+      font-family: var(--serif-display);
+      font-weight: 400;
+      font-size: clamp(2.8rem, 7vw, 5rem);
+      line-height: 1.05;
+      margin: .25em 0 .3em;
+      color: #f6efe0;
+    }
+
+    .research-title em {
+      font-style: italic;
+      color: #C97A01;
+    }
+
+    .research-rule {
+      width: 40px;
+      height: 2px;
+      background: #C97A01;
+      margin: 24px 0 30px;
+    }
+
+    .research-hero-lede {
+      max-width: 560px;
+      margin: 0;
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      color: #e4dccb;
+      line-height: 1.7;
+    }
+
+    .stats-band {
+      background: #F5EDD6;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      padding: 56px 28px;
+    }
+
+    .stats-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 20px;
+      text-align: center;
+    }
+
+    .stat-num {
+      font-family: var(--serif-display);
+      font-size: clamp(1.7rem, 2.8vw, 2.5rem);
+      font-weight: 600;
+      color: var(--oxblood);
+    }
+
+    .stat-label {
+      font-family: var(--serif-body);
+      font-size: .82rem;
+      color: var(--ink-faint);
+      margin-top: 6px;
+      line-height: 1.4;
+    }
+
+    @media (max-width:900px) {
+      .stats-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px 20px;
+      }
+    }
+
+    @media (max-width:560px) {
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .research-twocol {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      padding: 80px 28px;
+      max-width: 1200px;
+      margin: 0 auto;
+      background: white;
+    }
+
+    .col-head {
+      font-family: var(--serif-display);
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin: 0 0 12px;
+      color: var(--ink);
+    }
+
+    .col-rule {
+      width: 36px;
+      height: 2px;
+      background: #C97A01;
+      margin-bottom: 24px;
+    }
+
+    .research-twocol p {
+      color: var(--ink-soft);
+      margin: 0 0 20px;
+    }
+
+    @media (max-width:800px) {
+      .research-twocol {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    }
+
+    .findings-dark {
+      background: #1E1208;
+      width: 100%;
+      padding: 90px 28px;
+    }
+
+    .findings-dark>.eyebrow,
+    .findings-dark>.findings-title,
+    .findings-dark>.findings-intro,
+    .findings-dark>.finding-row {
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .findings-dark .eyebrow {
+      color: #C97A01;
+    }
+
+    .findings-title {
+      font-family: var(--serif-display);
+      font-style: italic;
+      font-weight: 400;
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      color: #f6efe0;
+      margin: .2em 0 20px;
+    }
+
+    .findings-intro {
+      font-family: var(--serif-body);
+      color: #cfc3ab;
+      max-width: 700px;
+      margin: 0 0 40px;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .finding-row {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 32px;
+      align-items: start;
+      padding: 26px 0;
+      border-bottom: 1px solid rgba(246, 239, 224, .12);
+    }
+
+    .finding-row:last-child {
+      border-bottom: none;
+    }
+
+    .finding-num {
+      font-family: var(--serif-display);
+      font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+      color: #C97A01;
+      font-weight: 500;
+    }
+
+    .finding-desc {
+      font-family: var(--serif-display);
+      font-style: italic;
+      color: #e7dcc9;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    @media (max-width:640px) {
+      .finding-row {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+    }
+
+    .access-data {
+      background: white;
+      border-top: 1px solid var(--ink);
+      padding: 80px 28px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .btn-dark {
+      display: inline-block;
+      margin-top: 28px;
+      background: var(--ink);
+      color: #f6efe0;
+      font-family: var(--serif-display);
+      letter-spacing: .05em;
+      padding: 16px 30px;
+      text-decoration: none;
+      transition: background .25s ease;
+    }
+
+    .btn-dark:hover {
+      background: #3a2716;
+    }
+
+    /* ---------- Themes page ---------- */
+    .themes-hero {
+      position: relative;
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .themes-hero-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.3;
+    }
+
+    .themes-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(90deg, rgba(20, 10, 0, .86) 0%, rgba(20, 10, 0, .62) 45%, rgba(20, 10, 0, .25) 100%);
+    }
+
+    .themes-hero-inner {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 40px clamp(28px, 5vw, 80px);
+      text-align: left;
+    }
+
+    .themes-hero-inner .eyebrow {
+      color: #C97A01;
+    }
+
+    .themes-title {
+      font-family: var(--serif-display);
+      font-weight: 400;
+      font-size: clamp(2.8rem, 7vw, 5rem);
+      line-height: 1.05;
+      margin: .25em 0 .3em;
+      color: #f6efe0;
+    }
+
+    .themes-title em {
+      font-style: italic;
+      color: #C97A01;
+    }
+
+    .themes-rule {
+      width: 40px;
+      height: 2px;
+      background: #C97A01;
+      margin: 24px 0 30px;
+    }
+
+    .themes-hero-lede {
+      max-width: 560px;
+      margin: 0;
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      color: #e4dccb;
+      line-height: 1.7;
+    }
+
+    /* Alternating full-width theme bands */
+    .theme-band {
+      width: 100%;
+    }
+
+    .theme-band--light {
+      background: #FFFFFF;
+    }
+
+    .theme-band--dark {
+      background: #1E1208;
+    }
+
+    .theme-band-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 90px 28px;
+    }
+
+    .theme-head {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 24px;
+    }
+
+    .theme-index {
+      font-family: var(--serif-display);
+      font-size: clamp(2.4rem, 4vw, 3.6rem);
+      font-weight: 400;
+      line-height: 1;
+    }
+
+    .theme-band--light .theme-index {
+      color: #D9D0BC;
+    }
+
+    .theme-band--dark .theme-index {
+      color: rgba(201, 122, 1, .35);
+    }
+
+    .theme-tag {
+      font-family: var(--serif-display);
+      text-transform: uppercase;
+      letter-spacing: .2em;
+      font-size: .78rem;
+      font-weight: 600;
+      color: #C97A01;
+      margin-bottom: 10px;
+    }
+
+    .theme-heading {
+      font-family: var(--serif-display);
+      font-weight: 500;
+      font-size: clamp(1.8rem, 3.4vw, 2.4rem);
+      line-height: 1.15;
+      margin: 0 0 20px;
+    }
+
+    .theme-band--light .theme-heading {
+      color: var(--ink);
+    }
+
+    .theme-band--dark .theme-heading {
+      color: #f5ede0;
+    }
+
+    .theme-body {
+      font-family: var(--serif-body);
+      font-size: 1.08rem;
+      line-height: 1.75;
+      max-width: 760px;
+      margin: 0 0 28px;
+    }
+
+    .theme-band--light .theme-body {
+      color: var(--ink-faint);
+    }
+
+    .theme-band--dark .theme-body {
+      color: #cfc3ab;
+    }
+
+    .theme-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .pill {
+      display: inline-block;
+      font-family: var(--serif-body);
+      font-size: .85rem;
+      line-height: 1.3;
+      padding: 10px 16px;
+      border-radius: 4px;
+    }
+
+    .theme-band--light .pill {
+      background: #1E1208;
+      color: #f5ede0;
+    }
+
+    .theme-band--dark .pill {
+      background: #C97A01;
+      color: #1E1208;
+    }
+
+    .theme-quotebox {
+      display: grid;
+      grid-template-columns: 1.35fr 1fr;
+      gap: 50px;
+      margin-top: 56px;
+      padding: 50px 60px;
+      border-left: 4px solid #C97A01;
+    }
+
+    .theme-band--light .theme-quotebox {
+      background: #EFE6D0;
+    }
+
+    .theme-band--dark .theme-quotebox {
+      background: #2A1B10;
+    }
+
+    .theme-quote {
+      font-family: var(--serif-display);
+      font-style: italic;
+      font-size: clamp(1.3rem, 2.2vw, 1.6rem);
+      line-height: 1.4;
+      margin: 0;
+      max-width: 480px;
+    }
+
+    .theme-band--light .theme-quote {
+      color: var(--ink);
+    }
+
+    .theme-band--dark .theme-quote {
+      color: #f5ede0;
+    }
+
+    .theme-quote cite {
+      display: block;
+      font-style: normal;
+      font-family: var(--serif-body);
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: .82rem;
+      color: #C97A01;
+      margin-top: 20px;
+    }
+
+    .theme-analysis {
+      padding-left: 40px;
+    }
+
+    .theme-band--light .theme-analysis {
+      border-left: 1px solid rgba(30, 18, 8, .12);
+    }
+
+    .theme-band--dark .theme-analysis {
+      border-left: 1px solid rgba(245, 237, 224, .12);
+    }
+
+    .theme-analysis-label {
+      font-family: var(--serif-display);
+      text-transform: uppercase;
+      letter-spacing: .2em;
+      font-size: .72rem;
+      font-weight: 600;
+      color: #C97A01;
+      margin-bottom: 10px;
+    }
+
+    .theme-analysis p {
+      font-family: var(--serif-display);
+      font-style: italic;
+      font-size: 1rem;
+      line-height: 1.65;
+      margin: 0;
+      max-width: 380px;
+    }
+
+    .theme-band--light .theme-analysis p {
+      color: var(--ink-faint);
+    }
+
+    .theme-band--dark .theme-analysis p {
+      color: #cfc3ab;
+    }
+
+    @media (max-width:820px) {
+      .theme-head {
+        grid-template-columns: 1fr;
+        gap: 4px;
+      }
+
+      .theme-index {
+        font-size: 2rem;
+      }
+
+      .theme-quotebox {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 36px 28px;
+      }
+
+      .theme-analysis {
+        padding-left: 0;
+        border-left: none !important;
+        border-top: 1px solid rgba(0, 0, 0, .12);
+        padding-top: 24px;
+      }
+    }
+
+    /* ---------- Videos page ---------- */
+    .videos-hero {
+      position: relative;
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .videos-hero-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.3;
+    }
+
+    .videos-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(90deg, rgba(20, 10, 0, .86) 0%, rgba(20, 10, 0, .62) 45%, rgba(20, 10, 0, .25) 100%);
+    }
+
+    .videos-hero-inner {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 40px clamp(28px, 5vw, 80px);
+      text-align: left;
+    }
+
+    .videos-hero-inner .eyebrow {
+      color: #C97A01;
+    }
+
+    .videos-title {
+      font-family: var(--serif-display);
+      font-weight: 400;
+      font-size: clamp(2.8rem, 7vw, 5rem);
+      line-height: 1.05;
+      margin: .25em 0 .3em;
+      color: #f6efe0;
+    }
+
+    .videos-title em {
+      font-style: italic;
+      color: #C97A01;
+    }
+
+    .videos-rule {
+      width: 40px;
+      height: 2px;
+      background: #C97A01;
+      margin: 24px 0 30px;
+    }
+
+    .videos-hero-lede {
+      max-width: 560px;
+      margin: 0;
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      color: #e4dccb;
+      line-height: 1.7;
+    }
+
+    .video-grid-wrap {
+      background: #FFFFFF;
+      width: 100%;
+    }
+
+    .video-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 90px 28px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+    }
+
+    @media (max-width:900px) {
+      .video-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+    }
+
+    .vid-card {
+      background: #ffffff;
+      border: 1px solid var(--line);
+      overflow: hidden;
+      transition: transform .3s ease, box-shadow .3s ease;
+    }
+
+    .vid-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 24px 44px -26px rgba(30, 18, 8, .35);
+    }
+
+    .vid-thumb {
+      position: relative;
+      display: block;
+      aspect-ratio: 16/9;
+      background: linear-gradient(135deg, #33261a 0%, #1E1208 100%);
+      overflow: hidden;
+    }
+
+    .vid-thumb-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+      transition: transform .3s ease;
+    }
+
+    .vid-card:hover .vid-thumb-img {
+      transform: scale(1.04);
+    }
+
+    .vid-thumb::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(180deg, rgba(0, 0, 0, .15) 0%, rgba(0, 0, 0, .55) 100%);
+      transition: background .3s ease;
+    }
+
+    .vid-play {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .12);
+      border: 2px solid rgba(255, 255, 255, .55);
+      color: #fff;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+      transition: transform .3s ease, background .3s ease;
+    }
+
+    .vid-card:hover .vid-play {
+      transform: translate(-50%, -50%) scale(1.12);
+      background: rgba(255, 255, 255, .22);
+    }
+
+    .vid-icons {
+      position: absolute;
+      left: 14px;
+      top: 14px;
+      display: flex;
+      gap: 8px;
+      z-index: 3;
+    }
+
+    .vid-icon-btn {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, .45);
+      color: #f5ede0;
+      font-size: .78rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .vid-avatar-row {
+      position: absolute;
+      left: 14px;
+      bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      z-index: 3;
+    }
+
+    .vid-avatar {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: #C97A01;
+      color: #1E1208;
+      font-family: var(--serif-display);
+      font-weight: 700;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .vid-thumb-channel {
+      color: #f5ede0;
+      font-family: var(--serif-body);
+      font-size: .85rem;
+      font-weight: 600;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, .7);
+    }
+
+    .vid-watch-pill {
+      position: absolute;
+      right: 14px;
+      bottom: 14px;
+      z-index: 3;
+      background: rgba(0, 0, 0, .6);
+      color: #fff;
+      font-family: var(--serif-body);
+      font-size: .78rem;
+      font-weight: 600;
+      padding: 8px 14px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .vid-card-body {
+      padding: 28px 30px 32px;
+    }
+
+    .vid-meta-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+
+    .vid-tag {
+      font-family: var(--serif-body);
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 3px;
+      color: #f5ede0;
+    }
+
+    .vid-tag--debunker {
+      background: #5B5A38;
+    }
+
+    .vid-tag--promoter {
+      background: var(--oxblood);
+    }
+
+    .vid-tag--neutral {
+      background: #5A5F6A;
+    }
+
+    .vid-stats {
+      font-family: var(--serif-body);
+      font-size: .85rem;
+      color: var(--ink-faint);
+    }
+
+    .vid-author {
+      font-family: var(--serif-body);
+      font-size: .8rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: #C97A01;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .vid-title {
+      font-family: var(--serif-display);
+      font-size: 1.45rem;
+      font-weight: 600;
+      line-height: 1.25;
+      color: var(--ink);
+      margin: 0 0 14px;
+    }
+
+    .vid-divider {
+      width: 34px;
+      height: 2px;
+      background: #C97A01;
+      margin-bottom: 16px;
+    }
+
+    .vid-commentary {
+      font-family: var(--serif-display);
+      font-style: italic;
+      font-size: .98rem;
+      line-height: 1.65;
+      color: var(--ink-faint);
+      margin: 0;
+    }
+
+    /* ---------- Mentions page ---------- */
+    .mentions-hero {
+      position: relative;
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .mentions-hero-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.3;
+    }
+
+    .mentions-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(90deg, rgba(20, 10, 0, .86) 0%, rgba(20, 10, 0, .62) 45%, rgba(20, 10, 0, .25) 100%);
+    }
+
+    .mentions-hero-inner {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 40px clamp(28px, 5vw, 80px);
+      text-align: left;
+    }
+
+    .mentions-hero-inner .eyebrow {
+      color: #C97A01;
+    }
+
+    .mentions-title {
+      font-family: var(--serif-display);
+      font-weight: 400;
+      font-size: clamp(2.8rem, 7vw, 5rem);
+      line-height: 1.05;
+      margin: .25em 0 .3em;
+      color: #f6efe0;
+    }
+
+    .mentions-title em {
+      font-style: italic;
+      color: #C97A01;
+    }
+
+    .mentions-rule {
+      width: 40px;
+      height: 2px;
+      background: #C97A01;
+      margin: 24px 0 30px;
+    }
+
+    .mentions-hero-lede {
+      max-width: 560px;
+      margin: 0;
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      color: #e4dccb;
+      line-height: 1.7;
+    }
+
+    .mentions-empty {
+      width: 100%;
+      background: #FFFFFF;
+      padding: 130px 28px;
+      text-align: center;
+    }
+
+    .mentions-empty p {
+      font-family: var(--serif-display);
+      font-style: italic;
+      font-size: 1.1rem;
+      color: var(--ink-faint);
+      margin: 0;
+    }
+
+    .mentions-ongoing {
+      width: 100%;
+      background: #1E1208;
+      padding: 130px 28px;
+      text-align: center;
+    }
+
+    .mentions-ongoing p {
+      font-family: var(--serif-display);
+      font-style: italic;
+      font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+      line-height: 1.5;
+      color: #f5ede0;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .mentions-ongoing-rule {
+      width: 40px;
+      height: 1px;
+      background: rgba(245, 237, 224, .4);
+      margin: 32px auto 0;
+    }
+
+    /* ---------- Paper page ---------- */
+    .paper-hero {
+      position: relative;
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .paper-hero-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.3;
+    }
+
+    .paper-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(90deg, rgba(20, 10, 0, .86) 0%, rgba(20, 10, 0, .62) 45%, rgba(20, 10, 0, .25) 100%);
+    }
+
+    .paper-hero-inner {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 40px clamp(28px, 5vw, 80px);
+      text-align: left;
+    }
+
+    .paper-hero-inner .eyebrow {
+      color: #C97A01;
+    }
+
+    .paper-title {
+      font-family: var(--serif-display);
+      font-weight: 400;
+      font-size: clamp(2.2rem, 5.6vw, 4.2rem);
+      line-height: 1.1;
+      margin: .25em 0 .3em;
+      color: #f6efe0;
+    }
+
+    .paper-title em {
+      font-style: italic;
+      color: #C97A01;
+    }
+
+    .paper-rule {
+      width: 40px;
+      height: 2px;
+      background: #C97A01;
+      margin: 24px 0 30px;
+    }
+
+    .paper-hero-lede {
+      max-width: 560px;
+      margin: 0;
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      color: #e4dccb;
+      line-height: 1.7;
+    }
+
+    .paper-content {
+      width: 100%;
+      background: #FFFFFF;
+    }
+
+    .paper-content-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 100px 28px 140px;
+    }
+
+    .chapter-eyebrow {
+      font-family: var(--serif-display);
+      text-transform: uppercase;
+      letter-spacing: .2em;
+      font-size: .78rem;
+      font-weight: 600;
+      color: #C97A01;
+      margin: 70px 0 10px;
+    }
+
+    .paper-content-inner>.chapter-eyebrow:first-child {
+      margin-top: 0;
+    }
+
+    .chapter-rule {
+      width: 40px;
+      height: 1px;
+      background: #C97A01;
+      margin-bottom: 22px;
+    }
+
+    .chapter-heading {
+      font-family: var(--serif-display);
+      font-weight: 600;
+      font-size: clamp(1.9rem, 3.6vw, 2.4rem);
+      color: var(--ink);
+      margin: 0 0 26px;
+    }
+
+    .sub-heading {
+      font-family: var(--serif-display);
+      font-weight: 600;
+      font-size: clamp(1.4rem, 2.6vw, 1.7rem);
+      color: var(--ink);
+      margin: 46px 0 18px;
+    }
+
+    .paper-content-inner p {
+      font-family: var(--serif-body);
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: var(--ink-soft);
+      margin: 0 0 26px;
+    }
+
+    .paper-link {
+      color: var(--oxblood);
+    }
+
+    .paper-link:hover {
+      color: var(--oxblood-deep);
+    }
+
+    .table-scroll {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin: 30px 0 34px;
+    }
+
+    table.paper-table {
+      width: 100%;
+      min-width: 560px;
+      border-collapse: collapse;
+      margin: 0;
+      font-size: .95rem;
+    }
+
+    table.paper-table caption {
+      text-align: left;
+      font-family: var(--serif-body);
+      color: var(--ink-soft);
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+
+    table.paper-table thead th {
+      background: #1E1208;
+      color: #f5ede0;
+      font-family: var(--serif-display);
+      font-weight: 700;
+      text-align: left;
+      padding: 14px 20px;
+    }
+
+    table.paper-table tbody td {
+      padding: 16px 20px;
+      border-bottom: 1px solid rgba(30, 18, 8, .08);
+    }
+
+    table.paper-table tbody tr:nth-child(odd) {
+      background: #FBF7EE;
+    }
+
+    table.paper-table tbody tr:nth-child(even) {
+      background: #F0E6CE;
+    }
+
+    .paper-figure {
+      margin: 36px 0;
+    }
+
+    .paper-figure img {
+      width: 100%;
+      max-width: 460px;
+      display: block;
+      margin: 0 auto;
+      border: 1px solid var(--line);
+    }
+
+    .asha-band-inner .paper-figure img {
+      max-width: 100%;
+    }
+
+    .paper-figure figcaption {
+      text-align: center;
+      font-family: var(--serif-display);
+      font-style: italic;
+      font-size: .92rem;
+      color: var(--ink-faint);
+      margin-top: 12px;
+    }
+
+    /* ---------- ASHA Workers page ---------- */
+    .asha-hero {
+      position: relative;
+      min-height: 78vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .asha-hero-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .asha-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(90deg, rgba(20, 10, 0, .78) 0%, rgba(20, 10, 0, .5) 45%, rgba(20, 10, 0, .18) 100%);
+    }
+
+    .asha-hero-inner {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: var(--maxw);
+      margin: 0 auto;
+      padding: 40px clamp(28px, 5vw, 80px);
+      text-align: left;
+    }
+
+    .asha-hero-inner .eyebrow {
+      color: #C97A01;
+    }
+
+    .asha-title {
+      font-family: var(--serif-display);
+      font-weight: 400;
+      font-size: clamp(2.6rem, 6.2vw, 4.6rem);
+      line-height: 1.05;
+      margin: .25em 0 .18em;
+      color: #f6efe0;
+    }
+
+    .asha-title em {
+      font-style: italic;
+      color: inherit;
+    }
+
+    .asha-subtitle {
+      font-family: var(--serif-display);
+      font-style: italic;
+      font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+      color: #cdbfa6;
+      margin: 0 0 26px;
+    }
+
+    .asha-rule {
+      width: 40px;
+      height: 2px;
+      background: #C97A01;
+      margin: 0 0 30px;
+    }
+
+    .asha-hero-lede {
+      max-width: 560px;
+      margin: 0;
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      color: #cdbfa6;
+      line-height: 1.7;
+    }
+
+    .asha-band {
+      width: 100%;
+    }
+
+    .asha-band--dark {
+      background: #1E1208;
+    }
+
+    .asha-band--light {
+      background: #FFFFFF;
+    }
+
+    .asha-band--deep {
+      background: #F0E6CE;
+    }
+
+    .asha-band-inner {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 90px 28px;
+    }
+
+    .asha-band-inner p,
+    .asha-band-inner li {
+      font-family: var(--serif-body);
+      font-size: 1.05rem;
+      line-height: 1.85;
+      color: var(--ink-soft);
+      margin: 0 0 26px;
+    }
+
+    .asha-band--dark .asha-band-inner p {
+      color: #e7dcc9;
+    }
+
+    .asha-band--dark .chapter-eyebrow {
+      margin-top: 0;
+    }
+
+    .ref-header {
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      margin-bottom: 0;
+    }
+
+    .ref-toggle {
+      background: none;
+      border: none;
+      font-family: var(--serif-body);
+      font-size: .82rem;
+      letter-spacing: .04em;
+      color: var(--ink-faint);
+      cursor: pointer;
+      padding: 0;
+    }
+
+    .ref-toggle:hover {
+      color: var(--oxblood);
+    }
+
+    .ref-list {
+      list-style: none;
+      margin: 30px 0 0;
+      padding: 0;
+      display: none;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .ref-block.open .ref-list {
+      display: flex;
+    }
+
+    .ref-list li {
+      font-size: .95rem;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    /* ---------- Project header (back-link + title) ---------- */
+    .brand-area {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .brand-back {
+      font-family: var(--serif-display);
+      font-size: .95rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: #cdbfa6;
+      cursor: pointer;
+      transition: color .3s ease;
+    }
+
+    header.site.solid .brand-back {
+      color: var(--ink-faint);
+    }
+
+    .brand-sep {
+      /* color: rgba(205, 191, 166, .5); */
+      color: white
+    }
+
+    header.site.solid .brand-sep {
+      color: var(--line);
+    }
+
+    .eyebrow {
+      font-family: var(--serif-display);
+      text-transform: uppercase;
+      letter-spacing: .32em;
+      font-size: .82rem;
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    /* ---------- Home title block ---------- */
+    .title-block {
+      padding: 70px 0 30px;
+      text-align: center;
+    }
+
+    .title-block h1 {
+      font-family: var(--serif-display);
+      font-weight: 600;
+      font-size: clamp(3.4rem, 10vw, 7.5rem);
+      line-height: .92;
+      margin: .1em 0;
+      color: var(--ink);
+      letter-spacing: .01em;
+    }
+
+    .title-block .sub {
+      font-family: var(--serif-display);
+      font-style: italic;
+      font-size: clamp(1.1rem, 3vw, 1.6rem);
+      color: var(--ink-faint);
+      margin-top: 18px;
+    }
+
+    .rule {
+      width: 80px;
+      height: 2px;
+      background: var(--oxblood);
+      margin: 34px auto;
+      opacity: .7;
+    }
+
+    .lede {
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 1.28rem;
+      color: var(--ink-soft);
+      line-height: 1.75;
+    }
+
+    /* ---------- Section headings ---------- */
+    section.block {
+      padding: 70px 0;
+    }
+
+    section.block.alt {
+      background: var(--parchment-deep);
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    /* Cow Urine Chronicles: all sections white except the "Five ways" (Explore) block */
+    #gomutra {
+      background: #ffffff;
+    }
+
+    #gomutra section.block {
+      background: #ffffff;
+      border-top: none;
+      border-bottom: none;
+    }
+
+    /* Standalone Research/Themes/Videos/Mentions/Paper pages: white, no alt striping */
+    section.page.block {
+      background: #ffffff;
+      border-top: none;
+      border-bottom: none;
+      padding-top: 110px;
+    }
+
+    #gomutra section#explore {
+      background: #F5EDD6;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+    }
+
+    #gomutra .cow-urine-chronicle-quote {
+      background: #ffffff;
+      max-width: none;
+      width: 100%;
+      margin: 0;
+      padding: 8rem 2rem;
+      text-align: center;
+    }
+
+    #gomutra .cow-urine-chronicle-quote .quote {
+      max-width: 780px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .sec-head {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .sec-head h2 {
+      font-family: var(--serif-display);
+      font-weight: 600;
+      font-size: clamp(2.2rem, 5vw, 3.2rem);
+      margin: .15em 0;
+      color: var(--ink);
+    }
+
+    .sec-head p {
+      color: var(--ink-faint);
+      font-style: italic;
+      font-size: 1.15rem;
+      margin: 0;
+    }
+
+    /* ---------- Project cards ---------- */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 34px;
+    }
+
+    .card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      box-shadow: 0 2px 0 var(--parchment-deep), 0 14px 30px -20px var(--shadow);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      transition: transform .3s ease, box-shadow .3s ease;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 2px 0 var(--parchment-deep), 0 22px 40px -22px var(--shadow);
+    }
+
+    .card img {
+      height: 210px;
+      width: 100%;
+      object-fit: cover;
+      filter: sepia(.1);
+    }
+
+    .card .body {
+      padding: 26px 28px 30px;
+    }
+
+    .card .tag {
+      font-family: var(--serif-display);
+      text-transform: uppercase;
+      letter-spacing: .24em;
+      font-size: .72rem;
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    .card h3 {
+      font-family: var(--serif-display);
+      font-size: 1.75rem;
+      font-weight: 600;
+      margin: 8px 0 12px;
+      line-height: 1.1;
+    }
+
+    .card p {
+      margin: 0 0 18px;
+      color: var(--ink-soft);
+      font-size: 1.05rem;
+    }
+
+    .card .go {
+      font-family: var(--serif-display);
+      font-weight: 600;
+      letter-spacing: .03em;
+      font-size: 1.05rem;
+    }
+
+    .card .go::after {
+      content: " →";
+      transition: margin .2s ease;
+    }
+
+    .card:hover .go::after {
+      margin-left: 5px;
+    }
+
+    /* ---------- About ---------- */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .about-grid .txt h2 {
+      font-family: var(--serif-display);
+      font-size: 2.6rem;
+      font-weight: 600;
+      margin: 0 0 20px;
+    }
+
+    .about-grid .txt p {
+      color: var(--ink-soft);
+      font-size: 1.15rem;
+    }
+
+    .portrait {
+      background: var(--paper);
+      padding: 12px;
+      border: 1px solid var(--line);
+      box-shadow: 0 16px 34px -20px var(--shadow);
+      transform: rotate(-1.2deg);
+    }
+
+    .portrait img {
+      filter: sepia(.15) contrast(1.02);
+    }
+
+    .quote {
+      font-family: "Cormorant Garamond, serif";
+      font-style: italic;
+      font-size: clamp(1.5rem, 3.6vw, 2.3rem);
+      line-height: 1.4;
+      color: var(--ink);
+      max-width: 900px;
+      margin: 60px auto 0;
+      text-align: center;
+      position: relative;
+    }
+
+    /* .quote::before {
+      content: "“";
+      font-size: 3em;
+      color: var(--line);
+      position: absolute;
+      left: -.2em;
+      top: -.4em;
+    } */
+
+    .quote .attr {
+      display: block;
+      font-style: normal;
+      font-size: .95rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-top: 22px;
+    }
+
+    /* ---------- About (dark) section ---------- */
+    .about-dark {
+      background: #1E1208;
+      border-top: none;
+      border-bottom: none;
+    }
+
+    .about-grid2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .about-left {
+      max-width: 520px;
+    }
+
+    .portrait2 {
+      background: #2a1a0d;
+      padding: 10px;
+      border: 1px solid #3d2814;
+      box-shadow: 0 20px 40px -22px rgba(0, 0, 0, .7);
+      margin-bottom: 32px;
+      display: inline-block;
+      max-width: 300px;
+    }
+
+    .portrait2 img {
+      filter: sepia(.12) contrast(1.02);
+    }
+
+    .about-heading {
+      font-family: var(--serif-display);
+      font-weight: 600;
+      font-size: clamp(2.4rem, 5vw, 3.4rem);
+      color: #C97A01;
+      margin: 0 0 18px;
+      letter-spacing: .02em;
+    }
+
+    .about-text {
+      color: #e7dcc9;
+      font-size: 1.15rem;
+      line-height: 1.75;
+      margin: 0 0 24px;
+    }
+
+    .about-email {
+      display: inline-block;
+      color: #C97A01;
+      font-family: var(--serif-display);
+      font-size: 1.35rem;
+      font-weight: 600;
+      border-bottom: 1px solid rgba(201, 122, 1, .4);
+      padding-bottom: 2px;
+    }
+
+    .about-email:hover {
+      color: #e8912a;
+      border-color: #C97A01;
+    }
+
+    .about-quote {
+      font-family: var(--serif-display);
+      font-style: italic;
+      font-weight: 500;
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      line-height: 1.35;
+      color: #f3e9d2;
+      margin: 0;
+    }
+
+    /* ---------- Long-form article (asha) ---------- */
+    .article {
+      max-width: 820px;
+      margin: 0 auto;
+    }
+
+    .article .kicker {
+      text-align: center;
+      margin-bottom: 8px;
+    }
+
+    .article h1.doc {
+      font-family: var(--serif-display);
+      font-weight: 500;
+      text-align: center;
+      font-size: clamp(2.4rem, 3vw, 4rem);
+      line-height: 1.2;
+      margin-bottom: 2rem;
+    }
+
+    .article h1.doc em {
+      font-style: italic;
+      color: var(--oxblood);
+    }
+
+    .article .doc-sub {
+      text-align: center;
+      font-style: italic;
+      color: var(--ink-faint);
+      font-size: 1.3rem;
+      margin-bottom: 40px;
+    }
+
+    .article h2 {
+      font-family: var(--serif-display);
+      font-size: 2rem;
+      font-weight: 600;
+      margin: 48px 0 6px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 8px;
+    }
+
+    .article h3 {
+      font-family: var(--serif-display);
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin: 28px 0 4px;
+      color: var(--ink-soft);
+    }
+
+    .article p {
+      color: var(--ink-soft);
+    }
+
+    .placeholder {
+      color: var(--ink-faint);
+      font-style: italic;
+    }
+
+    .imgrow {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin: 28px 0;
+    }
+
+    .imgrow img {
+      height: 150px;
+      object-fit: cover;
+      border: 1px solid var(--line);
+      filter: sepia(.12);
+    }
+
+    table.doc {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      font-size: 1rem;
+      background: var(--paper);
+    }
+
+    table.doc caption {
+      font-style: italic;
+      color: var(--ink-faint);
+      text-align: left;
+      margin-bottom: 8px;
+    }
+
+    table.doc th,
+    table.doc td {
+      border: 1px solid var(--line);
+      padding: 10px 14px;
+      text-align: left;
+    }
+
+    table.doc th {
+      background: var(--parchment-deep);
+      font-family: var(--serif-display);
+    }
+
+    /* ---------- Inline pull-quote (within article body) ---------- */
+    .pull-quote {
+      border-left: 3px solid var(--oxblood);
+      padding: 4px 0 4px 24px;
+      margin: 28px 0;
+      font-family: var(--serif-display);
+      font-style: italic;
+      font-size: 1.3rem;
+      line-height: 1.5;
+      color: var(--ink);
+    }
+
+    .pull-quote cite {
+      display: block;
+      font-style: normal;
+      font-family: var(--serif-body);
+      font-size: .85rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--ink-faint);
+      margin-top: 10px;
+    }
+
+    /* ---------- Theme list (Recurring Themes) ---------- */
+    .theme-list {
+      display: flex;
+      flex-direction: column;
+      gap: 44px;
+    }
+
+    .theme-item {
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 24px;
+    }
+
+    .theme-num {
+      font-family: var(--serif-display);
+      font-size: 2.6rem;
+      font-weight: 500;
+      color: var(--line);
+      line-height: 1;
+    }
+
+    .theme-item h3 {
+      font-family: var(--serif-display);
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin: 0 0 10px;
+      color: var(--ink);
+    }
+
+    .theme-item p {
+      color: var(--ink-soft);
+      margin: 0 0 6px;
+    }
+
+    @media (max-width:600px) {
+      .theme-item {
+        grid-template-columns: 1fr;
+      }
+
+      .theme-num {
+        font-size: 1.8rem;
+      }
+    }
+
+    /* ---------- Video list (Video Commentary) ---------- */
+    .video-list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .video-item {
+      padding: 26px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .video-item:last-child {
+      border-bottom: none;
+    }
+
+    .video-meta {
+      font-family: var(--serif-display);
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      font-size: .75rem;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .video-item h3 {
+      font-family: var(--serif-display);
+      font-size: 1.35rem;
+      font-weight: 600;
+      margin: 0 0 8px;
+      color: var(--ink);
+    }
+
+    .video-item p {
+      color: var(--ink-soft);
+      margin: 0;
+    }
+
+    /* ---------- Anchors / sub-nav ---------- */
+    .subnav {
+      display: flex;
+      gap: 26px;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 22px 0;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 10px;
+    }
+
+    .subnav a {
+      font-family: var(--serif-display);
+      font-size: 1.05rem;
+      letter-spacing: .03em;
+      color: var(--ink-soft);
+      cursor: pointer;
+    }
+
+    .subnav a:hover {
+      color: var(--oxblood);
+    }
+
+    /* ---------- Explore list (five ways) ---------- */
+    .explore {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      background: transparent;
+      border: none;
+    }
+
+    .explore a {
+      background: white;
+      padding: 34px 30px;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      transition: background .25s, box-shadow .25s;
+    }
+
+    .explore a:hover {
+      background: #fffdf8;
+      box-shadow: 0 10px 24px -16px var(--shadow);
+    }
+
+    .explore .n {
+      font-family: var(--serif-display);
+      text-transform: uppercase;
+      letter-spacing: .22em;
+      font-size: .78rem;
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    .explore h4 {
+      font-family: var(--serif-display);
+      font-size: 1.7rem;
+      font-weight: 600;
+      margin: 10px 0 12px;
+      color: var(--ink);
+    }
+
+    .explore p {
+      margin: 0 0 22px;
+      font-size: .98rem;
+      color: var(--ink-faint);
+      flex-grow: 1;
+    }
+
+    .explore .read-more {
+      font-family: var(--serif-display);
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-size: .85rem;
+      font-weight: 600;
+      color: var(--oxblood);
+    }
+
+    .explore .read-more::after {
+      content: " \2192";
+    }
+
+    .dark-hero {
+      background-color: #1E1208;
+    }
+
+    @media (max-width:900px) {
+      .explore {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width:600px) {
+      .explore {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ---------- Contact ---------- */
+    .contact-cats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+      margin-top: 20px;
+    }
+
+    .cat {
+      border-left: 2px solid var(--oxblood);
+      padding: 4px 0 4px 22px;
+    }
+
+    .cat h3 {
+      font-family: var(--serif-display);
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin: 0 0 6px;
+    }
+
+    .cat p {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: 1.05rem;
+    }
+
+    .email-big {
+      display: inline-block;
+      font-family: var(--serif-display);
+      font-weight: 600;
+      font-size: clamp(1.4rem, 4vw, 2.4rem);
+      color: var(--oxblood);
+      border-bottom: 2px solid var(--line);
+      padding-bottom: 4px;
+      margin: 8px 0 4px;
+    }
+
+    .email-big:hover {
+      border-color: var(--oxblood);
+    }
+
+    /* ---------- Footer ---------- */
+    footer.site {
+      background: var(--ink);
+      color: var(--parchment);
+      padding: 60px 0 40px;
+      margin-top: 0;
+    }
+
+    footer.site a {
+      color: var(--parchment-deep);
+    }
+
+    footer.site a:hover {
+      color: #fff;
+    }
+
+    .foot-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 40px;
+    }
+
+    .foot-grid h4 {
+      font-family: var(--serif-display);
+      font-size: 1.3rem;
+      margin: 0 0 16px;
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .foot-brand {
+      font-family: var(--serif-display);
+      font-size: 1.7rem;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .foot-brand+p {
+      color: #c9bfa8;
+      font-size: 1.02rem;
+      max-width: 320px;
+    }
+
+    .foot-links {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .foot-links li {
+      margin-bottom: 10px;
+    }
+
+    .foot-links a {
+      font-family: var(--serif-display);
+      font-size: 1.08rem;
+      cursor: pointer;
+    }
+
+    .foot-bottom {
+      border-top: 1px solid rgba(243, 233, 210, .2);
+      margin-top: 44px;
+      padding-top: 22px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      color: #b7ac93;
+      font-size: .95rem;
+    }
+
+    /* ---------- Cow Urine Chronicle ---------- */
+    .cow-urine-chronicle-quote {
+      max-width: 780px;
+      margin: 0px auto;
+      padding: 8rem 2rem;
+      text-align: center;
+    }
+
+    /* ---------- Contact ---------- */
+    .reach-out-about-headers {
+      font-family: "Cormorant Garamond, serif";
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #1e1208;
+      line-height: 1.3;
+      margin-bottom: 0.35rem;
+    }
+
+
+    /* ---------- Responsive ---------- */
+    @media (max-width:820px) {
+      body {
+        font-size: 18px;
+      }
+
+      nav.main {
+        gap: 22px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 34px;
+      }
+
+      .about-grid2 {
+        grid-template-columns: 1fr;
+        gap: 44px;
+      }
+
+      .portrait {
+        max-width: 280px;
+        margin: 0 auto;
+        transform: none;
+      }
+
+      .imgrow {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .foot-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+    }
+
+    @media (max-width:520px) {
+      header.site .wrap {
+        height: 60px;
+      }
+
+      .brand {
+        font-size: 1.25rem;
+      }
+
+      nav.main a {
+        font-size: 1rem;
+      }
+
+      .imgrow {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =================== HEADER =================== -->
+  <header class="site">
+    <div class="wrap">
+      <div class="brand-area" id="brandArea"></div>
+      <nav class="main" id="mainNav"></nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- =================== HOME =================== -->
+    <section class="page active" id="home">
+      <div class="home-hero dark-hero">
+        <img class="home-hero-bg" src="https://ananyasharedalal.com/images/home-hero.png" alt="" />
+        <div class="home-hero-inner">
+          <div class="eyebrow">Independent Researcher · Mumbai</div>
+          <h1><span class="n-first">Ananya</span><br><span class="n-last">Sharedalal</span></h1>
+          <div class="rule"></div>
+          <p class="hero-lede">12th grade student at a residential school. My research and projects examine
+            historical narratives, developmental economics, and broader social issues.</p>
+        </div>
+      </div>
+
+      <!-- Projects -->
+      <section class="block alt">
+        <div class="wrap">
+          <div class="sec-head">
+            <div class="eyebrow">Projects</div>
+            <h2>Selected Work</h2>
+            <p>Two long-form research projects</p>
+          </div>
+          <div class="cards">
+            <article class="card" data-nav="gomutra">
+              <img src="https://ananyasharedalal.com/images/hero.png" alt="Cow Urine Chronicles" />
+              <div class="body">
+                <div class="tag">Digital Ethnography</div>
+                <h3>Cow Urine Chronicles</h3>
+                <p>An 18-month study of how cow-urine consumption is framed, defended, and historicised
+                  across 83 YouTube videos — how a contested practice is rebuilt as tradition in the digital public
+                  square.</p>
+                <span class="go">Enter the archive</span>
+              </div>
+            </article>
+            <article class="card" data-nav="asha">
+              <img src="https://ananyasharedalal.com/images/asha-hero.png" alt="ASHA Workers of Annamayya" />
+              <div class="body">
+                <div class="tag">Field Study</div>
+                <h3>The Nirasha of ASHAs</h3>
+                <p>A field study of the invisible labour of India's frontline healthcare workers in
+                  Annamayya district — their schedules, their pay, and what the community really thinks.</p>
+                <span class="go">Read the study</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section class="block about-dark">
+        <div class="wrap">
+          <div class="about-grid2">
+            <div class="about-left">
+              <div class="portrait2">
+                <img src="https://ananyasharedalal.com/images/ananya.png" alt="Ananya Sharedalal" />
+              </div>
+              <h2 class="about-heading">About</h2>
+              <p class="about-text">I am a 12th grade student at a residential school with a deep interest in
+                history and the social sciences. My research and projects focus on the construct of historical
+                narratives, impact of developmental economics, and broader issues that affect communities.</p>
+              <a class="about-email" href="mailto:ananyasharedalal@gmail.com">ananyasharedalal@gmail.com</a>
+            </div>
+            <div class="about-right">
+              <blockquote class="about-quote">
+                &ldquo;I always wondered what led people to believe in things that don&rsquo;t have concrete
+                scientific proofs.
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- =================== COW URINE CHRONICLES =================== -->
+    <section class="page" id="gomutra">
+      <div class="proj-hero dark-hero">
+        <img class="proj-hero-bg" src="https://ananyasharedalal.com/images/hero.png" alt="Cow at dusk" />
+        <div class="proj-hero-inner">
+          <div class="eyebrow">A Research Archive</div>
+          <h1>Cow Urine<br>Chronicles</h1>
+          <p class="proj-hero-lede">How has history been invoked in the ways gomutra gets talked about on the
+            media, and how does the Indian public react to hearing what YouTube influencers claim history is?</p>
+          <a class="btn-outline" data-scroll="about-project">Begin Reading &rarr;</a>
+        </div>
+      </div>
+
+      <section class="block" id="about-project">
+        <div class="wrap article">
+          <div class="kicker eyebrow" style="text-align:center">About the Project</div>
+          <h1 class="doc">A digital ethnography of an unusual corner of Indian YouTube</h1>
+          <p style="text-align:center; color:#8a8075">This archive documents an 18-month study under the mentorship of
+            Prof Joyojeet Pal along with a
+            team of international researchers of how cow urine consumption is framed, defended, and historicised
+            across 83 YouTube videos. It maps the recurring tropes, the appeals to antiquity, and the surprising
+            appearances of Western science — tracing how a contested practice is rebuilt as tradition in the
+            digital public square.</p>
+        </div>
+      </section>
+
+      <section class="block alt" id="explore">
+        <div class="wrap">
+          <div class="sec-head">
+            <div class="eyebrow">Explore the Archive</div>
+            <h2>Five ways to enter the corpus</h2>
+          </div>
+          <div class="explore">
+            <a data-nav="research">
+              <div class="n">Research</div>
+              <h4>Data &amp; Methodology</h4>
+              <p>83 YouTube videos classified and analysed — the corpus, the methodology, and the key
+                statistical findings.</p>
+              <span class="read-more">Read more</span>
+            </a>
+            <a data-nav="themes">
+              <div class="n">Themes</div>
+              <h4>Recurring Themes</h4>
+              <p>Five patterns that surface across the dataset: from Vedic antiquity as the only valid
+                history, to the West as a surprising validator.</p>
+              <span class="read-more">Read more</span>
+            </a>
+            <a data-nav="videos">
+              <div class="n">Videos</div>
+              <h4>Video Commentary</h4>
+              <p>Curated clips from the corpus — with close readings of what each reveals about how a
+                singular (flattened) historical narrative is used to influence.</p>
+              <span class="read-more">Read more</span>
+            </a>
+            <a data-nav="mentions">
+              <div class="n">Mentions</div>
+              <h4>Talks &amp; Mentions</h4>
+              <p>Where this research has been presented and discussed — from Microsoft Research to
+                Heidelberg.</p>
+              <span class="read-more">Read more</span>
+            </a>
+            <a data-nav="paper">
+              <div class="n">Paper</div>
+              <h4>The Full Paper</h4>
+              <p>The complete research paper — methodology, findings, and implications of how YouTube's
+                gomutra discourse is quietly rewriting Indian history.</p>
+              <span class="read-more">Read more</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="cow-urine-chronicle-quote">
+        <p class="quote" style="font-size:clamp(1.5rem,2.6vw,2rem); margin-top:44px">
+          "The past is never neutral. What gets called tradition is always a choice — and online, those
+          choices are made in public."
+        </p>
+        <br>
+        <span
+          style="font-family:Crimson Text, serif;font-size:0.85rem;letter-spacing:0.15em;text-transform:uppercase;color:#8a8075">Ananya
+          Sharedalal</span>
+      </section>
+    </section>
+
+    <!-- =================== RESEARCH (standalone page) =================== -->
+    <section class="page" id="research" style="background:white">
+      <div class="research-hero dark-hero">
+        <img class="research-hero-bg" src="https://ananyasharedalal.com/images/research-hero.png"
+          alt="Ancient manuscripts" />
+        <div class="research-hero-inner">
+          <div class="eyebrow">The Work</div>
+          <h1 class="research-title">Research, Data<br><em>&amp; Methodology</em></h1>
+          <div class="research-rule"></div>
+          <p class="research-hero-lede">100 highly influential YouTube videos — classified manually and
+            analysed using LLMs to examine how history is invoked, recast, and selectively remembered in
+            the Gomutra discourse.</p>
+        </div>
+      </div>
+
+      <div class="stats-band">
+        <div class="stats-grid">
+          <div class="stat">
+            <div class="stat-num">100</div>
+            <div class="stat-label">YouTube videos in corpus</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">83</div>
+            <div class="stat-label">Videos manually coded</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">28</div>
+            <div class="stat-label">Promoter videos</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">5&ndash;7</div>
+            <div class="stat-label">Explicit debunker videos</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">3.1M</div>
+            <div class="stat-label">Avg views per debunker video</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">680K</div>
+            <div class="stat-label">Avg views per promoter video</div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <div class="research-twocol">
+        <div>
+          <h2 class="col-head">Methodology</h2>
+          <div class="col-rule"></div>
+          <p>The primary data source is YouTube. A video had to have at least 100 views to be included
+            in the dataset — ensuring relevance and real audience reach.</p>
+          <p>All transcripts were translated to English using LLMs. Each translation was manually
+            reviewed for accuracy — though some discrepancies may remain. Videos were then classified by
+            stance (promoter, debunker, neutral), content style, narrative style, and speaker
+            demographics.</p>
+          <p>A specific focus was placed on coding the historical imagination of each video: which time
+            periods are invoked, which are absent, and how antiquity is used as a substitute for
+            evidence.</p>
+        </div>
+        <div>
+          <h2 class="col-head">Ethical Framing</h2>
+          <div class="col-rule"></div>
+          <p>All inferences and statements in this research are unbiased and based on observable
+            patterns in the data — not on personal opinions. This subject is culturally and religiously
+            sensitive, and that sensitivity has been central to how this research was conducted.</p>
+          <p>The goal is not to adjudicate whether Gomutra works or doesn't — the goal is to understand
+            what historical and rhetorical frameworks are being deployed, and what that tells us about
+            how Indians relate to their own past.</p>
+        </div>
+      </div>
+      <br>
+      <br>
+      <div class="findings-dark">
+        <div class="eyebrow">What the Data Shows</div>
+        <h2 class="findings-title">Preliminary Findings</h2>
+        <p class="findings-intro">Influencer content that invokes history and tradition is more likely
+          to find an accepting audience. History is a powerful tool — and in this corpus, it is deployed
+          with striking selectivity.</p>
+
+        <div class="finding-row">
+          <div class="finding-num">26 of 83</div>
+          <p class="finding-desc">Videos cite ancient Ayurvedic texts by name — Charaka Samhita, Sushruta
+            Samhita, Ashtanga Hridaya, Bhavaprakasha Nighantu.</p>
+        </div>
+        <div class="finding-row">
+          <div class="finding-num">13 videos</div>
+          <p class="finding-desc">Invoke "thousands of years ago" or "since ancient times" as a stand-in
+            for evidence.</p>
+        </div>
+        <div class="finding-row">
+          <div class="finding-num">13 videos</div>
+          <p class="finding-desc">Mention rishis, sages, or ancestors as the source of authority.</p>
+        </div>
+        <div class="finding-row">
+          <div class="finding-num">0 videos</div>
+          <p class="finding-desc">Mention the Mughal or British colonial period. The middle of Indian
+            history is entirely absent.</p>
+        </div>
+        <div class="finding-row">
+          <div class="finding-num">9 videos</div>
+          <p class="finding-desc">Reference America or Europe — not as colonisers, but as validators.
+            "Even foreign science is now saying…"</p>
+        </div>
+      </div>
+
+      <div class="access-data">
+        <h2 class="col-head">Access the Data</h2>
+        <div class="col-rule"></div>
+        <p>The full dataset — 83 videos with transcripts, influencer metadata, classifications, and coded
+          variables — is available for review. This includes the master dataset and three thematic
+          breakdowns covering the Vedic frame, the role of the West, and the promoter-debunker divide.</p>
+        <a class="btn-dark"
+          href="https://docs.google.com/spreadsheets/d/1sL5OCSKUtZv3nrFb4C7ct3ZXCcCEMgzDfk0wVSu1970/edit?usp=sharing"
+          target="_blank" rel="noopener">View Full Dataset &rarr;</a>
+      </div>
+    </section>
+
+    <!-- =================== THEMES (standalone page) =================== -->
+    <section class="page" id="themes">
+      <div class="themes-hero dark-hero">
+        <img class="themes-hero-bg" src="https://ananyasharedalal.com/images/themes-hero.png"
+          alt="Rows of clay pots" />
+        <div class="themes-hero-inner">
+          <div class="eyebrow">Patterns in the Data</div>
+          <h1 class="themes-title">Recurring<br><em>Themes</em></h1>
+          <div class="themes-rule"></div>
+          <p class="themes-hero-lede">Five patterns that surface repeatedly across 83 videos — from
+            ancient texts as the only valid authority, to the remarkable absence of 2,000 years of Indian
+            history.</p>
+        </div>
+      </div>
+
+      <div class="theme-band theme-band--light">
+        <div class="theme-band-inner">
+          <div class="theme-head">
+            <div class="theme-index">01</div>
+            <div>
+              <div class="theme-tag">Theme 01</div>
+              <h3 class="theme-heading">Antiquity is the only "history" that matters</h3>
+              <p class="theme-body">The historical imagination of this corpus is almost exclusively
+                pre-classical — a deep, undifferentiated "Vedic past" treated as an unbroken tradition. 26
+                of 83 videos cite ancient Ayurvedic texts by name. Another 12 invoke "thousands of years
+                ago" or "since ancient times." 13 mention rishis or sages. 13 cite the Vedas. Four
+                different ways of pointing at the same period.</p>
+              <div class="theme-pills">
+                <span class="pill">Named ancient texts as authority</span>
+                <span class="pill">Sage / Rishi authority</span>
+                <span class="pill">Time-distance / antiquity claims</span>
+                <span class="pill">Cosmic / elevated terminology</span>
+                <span class="pill">Sacredness, divinity, and "Mother Cow"</span>
+                <span class="pill">Institutional credentials borrowed for ancient claims</span>
+              </div>
+            </div>
+          </div>
+          <div class="theme-quotebox">
+            <blockquote class="theme-quote">"And in the Vedas, it is given the status of Amrit, Amrit
+              means which does not let die, which is a life-saving drug."
+              <cite>&mdash; Rakesh Agarwal</cite>
+            </blockquote>
+            <div class="theme-analysis">
+              <div class="theme-analysis-label">Analysis</div>
+              <p>The sentence quietly slides from myth to pharmacology. Amrit is the drink of the gods but
+                by the end of the line it has become "a life-saving drug." Vedic theology, IIT
+                credentials, and modern medicine — none of them are made to check each other, which is
+                what makes the move work.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="theme-band theme-band--dark">
+        <div class="theme-band-inner">
+          <div class="theme-head">
+            <div class="theme-index">02</div>
+            <div>
+              <div class="theme-tag">Theme 02</div>
+              <h3 class="theme-heading">The West appears as a validator, not destroyer</h3>
+              <p class="theme-body">When America or Europe appear (9 videos), they are not the colonisers
+                who erased traditional knowledge. They are recent ratifiers of it. "America granted a
+                patent on cow urine for cancer." "Germany and Singapore are importing our Ayurvedic beauty
+                products." Modernity isn't framed as a rupture — it's framed as eventual catch-up. This is
+                a quiet but important historiographical inversion: colonial trauma is replaced by Western
+                endorsement.</p>
+              <div class="theme-pills">
+                <span class="pill">The patent as final proof</span>
+                <span class="pill">Big international names as proof</span>
+                <span class="pill">Export markets as quality judges</span>
+                <span class="pill">Western media as a quality stamp</span>
+                <span class="pill">Shame as argument — Western respect converted into Indian guilt</span>
+              </div>
+            </div>
+          </div>
+          <div class="theme-quotebox">
+            <blockquote class="theme-quote">"These are the countries that understand the power of
+              India's centuries-old Ayurveda, but our people consider it a joke."
+              <cite>&mdash; Sushant Sinha</cite>
+            </blockquote>
+            <div class="theme-analysis">
+              <div class="theme-analysis-label">Analysis</div>
+              <p>The speaker shifts the argument away from whether cow urine works to whether Indians are
+                loyal. Doubting the substance gets framed as embarrassing your own country. The
+                contradiction doesn't slow him down because the line is built to make you feel guilty.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="theme-band theme-band--light">
+        <div class="theme-band-inner">
+          <div class="theme-head">
+            <div class="theme-index">03</div>
+            <div>
+              <div class="theme-tag">Theme 03</div>
+              <h3 class="theme-heading">Debunkers refuse to engage on historical terrain</h3>
+              <p class="theme-body">This is the most consequential pattern in the dataset. Dhruv Rathee's
+                strategy is to argue chemistry, not history — by performing the betadine trick with
+                ordinary water and his own urine, he sidesteps the entire ancient-text argument. The
+                skeptics treat history as irrelevant to whether chemistry works. The promoters treat
+                chemistry as confirmation of what history already established. Because the two sides
+                operate on different timescales, they almost never make contact.</p>
+              <div class="theme-pills">
+                <span class="pill">Chemistry / experiment as rebuttal</span>
+                <span class="pill">Modern medical authority as the only valid frame</span>
+                <span class="pill">Politics and current affairs as critique</span>
+                <span class="pill">The betadine experiment as shared battleground</span>
+              </div>
+            </div>
+          </div>
+          <div class="theme-quotebox">
+            <blockquote class="theme-quote">"This is the first time that I will show you the experiment
+              of betadine in my own urine."
+              <cite>&mdash; Dhruv Rathee</cite>
+            </blockquote>
+            <div class="theme-analysis">
+              <div class="theme-analysis-label">Analysis</div>
+              <p>The move is deliberate. He is not attacking the ancient claim — he is bypassing it. By
+                replicating the same "miracle" with his own urine, he shows the trick is basic chemistry,
+                meaning the historical pedigree of cow urine isn't doing any of the work the promoters say
+                it is. He never names a text or a sage. He doesn't need to.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="theme-band theme-band--dark">
+        <div class="theme-band-inner">
+          <div class="theme-head">
+            <div class="theme-index">04</div>
+            <div>
+              <div class="theme-tag">Theme 04</div>
+              <h3 class="theme-heading">Claims come in bundles, not alone</h3>
+              <p class="theme-body">If a video says cow urine helps your liver, it almost always also says
+                it helps your kidneys, your weight, your skin, and your digestion. Nobody promotes it for
+                just one thing. Liver is the most common claim (23 videos), and it tends to drag the rest
+                along with it. The promoted benefits cluster in a consistent hierarchy: mundane at the
+                base, chronic disease claims in the middle, then grand claims at the top (cancer cure — 25
+                videos).</p>
+              <div class="theme-pills">
+                <span class="pill">The "Ramdev formula" — personal anecdote + joint/liver/weight
+                  claims</span>
+                <span class="pill">Claim escalation ladder from mundane to miraculous</span>
+                <span class="pill">Cancer as the apex claim</span>
+                <span class="pill">Bundle credibility — low-stakes claims lending authority to
+                  high-stakes ones</span>
+              </div>
+            </div>
+          </div>
+          <div class="theme-quotebox">
+            <blockquote class="theme-quote">"Today's science proves what Baghbhatt ji said thousands of
+              years ago."
+              <cite>&mdash; Rajiv Dixit</cite>
+            </blockquote>
+            <div class="theme-analysis">
+              <div class="theme-analysis-label">Analysis</div>
+              <p>The hierarchy is what stands out. Science doesn't test the ancient claim — it confirms
+                it. The ancient sage is positioned as already correct and modernity just catches up. So the
+                speaker gets to claim scientific authority without ever being subject to scientific
+                review.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="theme-band theme-band--light">
+        <div class="theme-band-inner">
+          <div class="theme-head">
+            <div class="theme-index">05</div>
+            <div>
+              <div class="theme-tag">Theme 05</div>
+              <h3 class="theme-heading">Two camps, two vocabularies</h3>
+              <p class="theme-body">Promoters talk about Vedas, Ayurveda, immunity, and "amrit/sanjeevani"
+                — these words travel together. Skeptics talk about research, studies, experiments, and
+                chemistry — those words travel together. The two sides barely share language. This
+                linguistic divergence is not accidental. It reflects two entirely different epistemological
+                frameworks that happen to be fighting over the same object.</p>
+              <div class="theme-pills">
+                <span class="pill">Promoter vocabulary: sacred, ancient, divine, amrit</span>
+                <span class="pill">Debunker vocabulary: experiment, research, chemistry, institution</span>
+                <span class="pill">Wellness content as a third, neutral register</span>
+                <span class="pill">Political vocabulary as a fourth lane — mostly avoided by mainstream
+                  content</span>
+              </div>
+            </div>
+          </div>
+          <div class="theme-quotebox">
+            <blockquote class="theme-quote">The question is not whether Gomutra works — the question is
+              what we mean when we say it does.</blockquote>
+            <div class="theme-analysis">
+              <div class="theme-analysis-label">Analysis</div>
+              <p>When promoters say "it works" they mean it works spiritually, ancestrally, and
+                chemically — all at once. When debunkers say "it doesn't work" they mean it fails a
+                randomised controlled trial. These are not the same conversation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================== VIDEOS (standalone page) =================== -->
+    <section class="page" id="videos">
+      <div class="videos-hero dark-hero">
+        <img class="videos-hero-bg" src="https://ananyasharedalal.com/images/videos-hero.png"
+          alt="Ancient Indian alley" />
+        <div class="videos-hero-inner">
+          <div class="eyebrow">From the Corpus</div>
+          <h1 class="videos-title">Videos &amp;<br><em>Commentary</em></h1>
+          <div class="videos-rule"></div>
+          <p class="videos-hero-lede">12 clips from the corpus — with close readings of what each reveals
+            about how history, science, and authority are constructed in the Gomutra discourse.</p>
+        </div>
+      </div>
+
+      <div class="video-grid-wrap">
+        <div class="video-grid">
+
+          <article class="vid-card">
+            <a class="vid-thumb" data-avatar="D" href="https://www.youtube.com/watch?v=rjMbE9flUhQ"
+              target="_blank" rel="noopener">
+              <img class="vid-thumb-img" src="https://img.youtube.com/vi/rjMbE9flUhQ/hqdefault.jpg"
+                alt="" loading="lazy" />
+              <span class="vid-icons"><span class="vid-icon-btn">&#8599;</span><span
+                  class="vid-icon-btn">&#9201;</span></span>
+              <span class="vid-play">&#9658;</span>
+              <span class="vid-avatar-row"><span class="vid-avatar">D</span><span
+                  class="vid-thumb-channel">Dhruv Rathee</span></span>
+              <span class="vid-watch-pill">&#9658; Watch on YouTube</span>
+            </a>
+            <div class="vid-card-body">
+              <div class="vid-meta-row">
+                <span class="vid-tag vid-tag--debunker">Debunker</span>
+                <span class="vid-stats">8.1M views &middot; 28.5M subscribers</span>
+              </div>
+              <div class="vid-author">Dhruv Rathee &middot; Dhruv Rathee</div>
+              <h3 class="vid-title">Cow Urine Magic! Hidden Secret in Gaumutra Explained</h3>
+              <div class="vid-divider"></div>
+              <p class="vid-commentary">The move is deliberate. Rathee is not attacking the ancient
+                claim — he is bypassing it. By replicating the same "miracle" with his own urine, he
+                shows the trick is basic chemistry, meaning the historical pedigree of cow urine isn't
+                doing any of the work the promoters say it is.</p>
+            </div>
+          </article>
+
+          <article class="vid-card">
+            <a class="vid-thumb" data-avatar="S" href="https://www.youtube.com/watch?v=QvGlY-gGGaI"
+              target="_blank" rel="noopener">
+              <img class="vid-thumb-img" src="https://img.youtube.com/vi/QvGlY-gGGaI/hqdefault.jpg"
+                alt="" loading="lazy" />
+              <span class="vid-icons"><span class="vid-icon-btn">&#8599;</span><span
+                  class="vid-icon-btn">&#9201;</span></span>
+              <span class="vid-play">&#9658;</span>
+              <span class="vid-avatar-row"><span class="vid-avatar">S</span><span
+                  class="vid-thumb-channel">Swami Ramdev</span></span>
+              <span class="vid-watch-pill">&#9658; Watch on YouTube</span>
+            </a>
+            <div class="vid-card-body">
+              <div class="vid-meta-row">
+                <span class="vid-tag vid-tag--promoter">Promoter</span>
+                <span class="vid-stats">10.4M views &middot; 11.2M subscribers</span>
+              </div>
+              <div class="vid-author">Baba Ramdev &middot; Swami Ramdev</div>
+              <h3 class="vid-title">Know the countless benefits of drinking cow urine</h3>
+              <div class="vid-divider"></div>
+              <p class="vid-commentary">"Nectar-like medicine… offering of all the gods and
+                goddesses." This isn't really a medical sentence at all. It's a religious one wearing
+                medical clothes. By the time he's called the substance an offering to deities, he's
+                left the realm of testable claims entirely.</p>
+            </div>
+          </article>
+
+          <article class="vid-card">
+            <a class="vid-thumb" data-avatar="R" href="https://www.youtube.com/watch?v=SBHcG5qj7fg"
+              target="_blank" rel="noopener">
+              <img class="vid-thumb-img" src="https://img.youtube.com/vi/SBHcG5qj7fg/hqdefault.jpg"
+                alt="" loading="lazy" />
+              <span class="vid-icons"><span class="vid-icon-btn">&#8599;</span><span
+                  class="vid-icon-btn">&#9201;</span></span>
+              <span class="vid-play">&#9658;</span>
+              <span class="vid-avatar-row"><span class="vid-avatar">R</span><span
+                  class="vid-thumb-channel">KintuParantuSAF</span></span>
+              <span class="vid-watch-pill">&#9658; Watch on YouTube</span>
+            </a>
+            <div class="vid-card-body">
+              <div class="vid-meta-row">
+                <span class="vid-tag vid-tag--debunker">Debunker</span>
+                <span class="vid-stats">3.3M views &middot; 151K subscribers</span>
+              </div>
+              <div class="vid-author">Dr Ram Punyani &middot; KintuParantuSAF</div>
+              <h3 class="vid-title">Is There Really Gold in Cow Urine? Debunking the Myth</h3>
+              <div class="vid-divider"></div>
+              <p class="vid-commentary">"This has been glorified for a reason, and there's politics
+                behind it too." Instead of arguing whether cow urine works, the speaker historicises the
+                promotion. His critique is structural — about who benefits from the claim — rather than
+                chemical or textual.</p>
+            </div>
+          </article>
+
+          <article class="vid-card">
+            <a class="vid-thumb" data-avatar="A" href="https://www.youtube.com/watch?v=8nDDBoWTo8k"
+              target="_blank" rel="noopener">
+              <img class="vid-thumb-img" src="https://img.youtube.com/vi/8nDDBoWTo8k/hqdefault.jpg"
+                alt="" loading="lazy" />
+              <span class="vid-icons"><span class="vid-icon-btn">&#8599;</span><span
+                  class="vid-icon-btn">&#9201;</span></span>
+              <span class="vid-play">&#9658;</span>
+              <span class="vid-avatar-row"><span class="vid-avatar">A</span><span
+                  class="vid-thumb-channel">Aaj Tak</span></span>
+              <span class="vid-watch-pill">&#9658; Watch on YouTube</span>
+            </a>
+            <div class="vid-card-body">
+              <div class="vid-meta-row">
+                <span class="vid-tag vid-tag--neutral">Neutral / News</span>
+                <span class="vid-stats">55K views &middot; 71.4M subscribers</span>
+              </div>
+              <div class="vid-author">Sudhir Chaudhary &middot; Aaj Tak</div>
+              <h3 class="vid-title">Surprising benefits of cow urine, America has made medicine</h3>
+              <div class="vid-divider"></div>
+              <p class="vid-commentary">"A patent has already been obtained for using cow urine to
+                manufacture medicines for cancer…" The patent does all the work here. Just saying the
+                word "patent" makes the claim sound officially approved, even though nothing was ever
+                actually proved.</p>
+            </div>
+          </article>
+
+          <article class="vid-card">
+            <a class="vid-thumb" data-avatar="S" href="https://www.youtube.com/watch?v=YM_f0DD8fTg"
+              target="_blank" rel="noopener">
+              <img class="vid-thumb-img" src="https://img.youtube.com/vi/YM_f0DD8fTg/hqdefault.jpg"
+                alt="" loading="lazy" />
+              <span class="vid-icons"><span class="vid-icon-btn">&#8599;</span><span
+                  class="vid-icon-btn">&#9201;</span></span>
+              <span class="vid-play">&#9658;</span>
+              <span class="vid-avatar-row"><span class="vid-avatar">S</span><span
+                  class="vid-thumb-channel">Swami Ramdev HD</span></span>
+              <span class="vid-watch-pill">&#9658; Watch on YouTube</span>
+            </a>
+            <div class="vid-card-body">
+              <div class="vid-meta-row">
+                <span class="vid-tag vid-tag--promoter">Promoter</span>
+                <span class="vid-stats">32K views &middot; 1.13M subscribers</span>
+              </div>
+              <div class="vid-author">Baba Ramdev &middot; Swami Ramdev HD</div>
+              <h3 class="vid-title">Many people have experienced this and America has granted it a
+                patent</h3>
+              <div class="vid-divider"></div>
+              <p class="vid-commentary">Two unrelated things are stacked next to each other so that
+                they reinforce each other. Personal anecdotes and an American patent get treated as if
+                they're the same kind of evidence — but together they sound like a case.</p>
+            </div>
+          </article>
+
+          <article class="vid-card">
+            <a class="vid-thumb" data-avatar="S" href="https://www.youtube.com/watch?v=X6VWGgRn2N8"
+              target="_blank" rel="noopener">
+              <img class="vid-thumb-img" src="https://img.youtube.com/vi/X6VWGgRn2N8/hqdefault.jpg"
+                alt="" loading="lazy" />
+              <span class="vid-icons"><span class="vid-icon-btn">&#8599;</span><span
+                  class="vid-icon-btn">&#9201;</span></span>
+              <span class="vid-play">&#9658;</span>
+              <span class="vid-avatar-row"><span class="vid-avatar">S</span><span
+                  class="vid-thumb-channel">Times Now Navbharat</span></span>
+              <span class="vid-watch-pill">&#9658; Watch on YouTube</span>
+            </a>
+            <div class="vid-card-body">
+              <div class="vid-meta-row">
+                <span class="vid-tag vid-tag--promoter">Promoter</span>
+                <span class="vid-stats">621K views &middot; 23.7M subscribers</span>
+              </div>
+              <div class="vid-author">Sushant Sinha &middot; Times Now Navbharat</div>
+              <h3 class="vid-title">These countries understand India's centuries-old Ayurveda</h3>
+              <div class="vid-divider"></div>
+              <p class="vid-commentary">"These are the countries that understand the power of India's
+                centuries-old Ayurveda, but our people consider it a joke." The speaker shifts the
+                argument away from whether cow urine works to whether Indians are loyal.</p>
+            </div>
+          </article>
+
+          <article class="vid-card">
+            <a class="vid-thumb" data-avatar="L" href="https://www.youtube.com/watch?v=m69y2P9oY3c"
+              target="_blank" rel="noopener">
+              <img class="vid-thumb-img" src="https://img.youtube.com/vi/m69y2P9oY3c/hqdefault.jpg"
+                alt="" loading="lazy" />
+              <span class="vid-icons"><span class="vid-icon-btn">&#8599;</span><span
+                  class="vid-icon-btn">&#9201;</span></span>
+              <span class="vid-play">&#9658;</span>
+              <span class="vid-avatar-row"><span class="vid-avatar">L</span><span
+                  class="vid-thumb-channel">Lotus Pregnancy Care</span></span>
+              <span class="vid-watch-pill">&#9658; Watch on YouTube</span>
+            </a>
+            <div class="vid-card-body">
+              <div class="vid-meta-row">
+                <span class="vid-tag vid-tag--promoter">Promoter</span>
+                <span class="vid-stats">128K views &middot; 29.7K subscribers</span>
+              </div>
+              <div class="vid-author">Lotus Pregnancy Care &middot; Lotus Pregnancy Care</div>
+              <h3 class="vid-title">Benefits of cow urine (Gomutra) — home remedies</h3>
+              <div class="vid-divider"></div>
+              <p class="vid-commentary">The speaker stacks three impressive names — NIH, AYUSH, an
+                "International Journal" — into one breath. The volume of acronyms is meant to feel like
+                institutional consensus. Nothing about what those bodies actually concluded is
+                described, because the names alone are the argument.</p>
+            </div>
+          </article>
+
+          <article class="vid-card">
+            <a class="vid-thumb" data-avatar="B" href="https://www.youtube.com/watch?v=rN9qAZXModc"
+              target="_blank" rel="noopener">
+              <img class="vid-thumb-img" src="https://img.youtube.com/vi/rN9qAZXModc/hqdefault.jpg"
+                alt="" loading="lazy" />
+              <span class="vid-icons"><span class="vid-icon-btn">&#8599;</span><span
+                  class="vid-icon-btn">&#9201;</span></span>
+              <span class="vid-play">&#9658;</span>
+              <span class="vid-avatar-row"><span class="vid-avatar">B</span><span
+                  class="vid-thumb-channel">LEarning INDIA-BK</span></span>
+              <span class="vid-watch-pill">&#9658; Watch on YouTube</span>
+            </a>
+            <div class="vid-card-body">
+              <div class="vid-meta-row">
+                <span class="vid-tag vid-tag--promoter">Promoter</span>
+                <span class="vid-stats">N/A views &middot; 4.7K subscribers</span>
+              </div>
+              <div class="vid-author">B.K. Sahu &middot; LEarning INDIA-BK</div>
+              <h3 class="vid-title">ANSI Herbal Gaumutra — certified by the World Health
+                Organization</h3>
+              <div class="vid-divider"></div>
+              <p class="vid-commentary">"The herbal cow urine by ANSI is certified by the World Health
+                Organization." The WHO is one of the most over-cited authorities on Indian YouTube —
+                partly because the audience won't go check. The certification claim is left vague, no
+                document shown, no date given.</p>
+            </div>
+          </article>
+
+          <article class="vid-card">
+            <a class="vid-thumb" data-avatar="T" href="https://www.youtube.com/watch?v=uoMmwL_NCms"
+              target="_blank" rel="noopener">
+              <img class="vid-thumb-img" src="https://img.youtube.com/vi/uoMmwL_NCms/hqdefault.jpg"
+                alt="" loading="lazy" />
+              <span class="vid-icons"><span class="vid-icon-btn">&#8599;</span><span
+                  class="vid-icon-btn">&#9201;</span></span>
+              <span class="vid-play">&#9658;</span>
+              <span class="vid-avatar-row"><span class="vid-avatar">T</span><span
+                  class="vid-thumb-channel">Technical Farming</span></span>
+              <span class="vid-watch-pill">&#9658; Watch on YouTube</span>
+            </a>
+            <div class="vid-card-body">
+              <div class="vid-meta-row">
+                <span class="vid-tag vid-tag--promoter">Promoter</span>
+                <span class="vid-stats">2.4M views &middot; 3.24M subscribers</span>
+              </div>
+              <div class="vid-author">Rakesh Agarwal &middot; Technical Farming</div>
+              <h3 class="vid-title">IIT Bombay PhD Dr. Rakesh Agarwal on cow urine</h3>
+              <div class="vid-divider"></div>
+              <p class="vid-commentary">"And in the Vedas, it is given the status of Amrit, Amrit
+                means which does not let die, which is a life-saving drug." Three different frames —
+                Vedic theology, IIT credentials, and modern medicine — none of them are made to check
+                each other.</p>
+            </div>
+          </article>
+
+          <article class="vid-card">
+            <a class="vid-thumb" data-avatar="W" href="https://www.youtube.com/watch?v=3byvrK_UQ0U"
+              target="_blank" rel="noopener">
+              <img class="vid-thumb-img" src="https://img.youtube.com/vi/3byvrK_UQ0U/hqdefault.jpg"
+                alt="" loading="lazy" />
+              <span class="vid-icons"><span class="vid-icon-btn">&#8599;</span><span
+                  class="vid-icon-btn">&#9201;</span></span>
+              <span class="vid-play">&#9658;</span>
+              <span class="vid-avatar-row"><span class="vid-avatar">W</span><span
+                  class="vid-thumb-channel">We R Stupid</span></span>
+              <span class="vid-watch-pill">&#9658; Watch on YouTube</span>
+            </a>
+            <div class="vid-card-body">
+              <div class="vid-meta-row">
+                <span class="vid-tag vid-tag--neutral">Neutral / Explainer</span>
+                <span class="vid-stats">32K views &middot; 1.2M subscribers</span>
+              </div>
+              <div class="vid-author">Akshay Chopra &middot; We R Stupid</div>
+              <h3 class="vid-title">Truth about Gomutra (Cow Urine) — Science or Myth?</h3>
+              <div class="vid-divider"></div>
+              <p class="vid-commentary">The speaker spreads the claim across continents on purpose. If
+                the practice is only Indian, critics can call it Hindu pseudoscience. If it's universal,
+                attacking it is like attacking all of human history. The vagueness is what makes the
+                claim unfightable.</p>
+            </div>
+          </article>
+
+          <article class="vid-card">
+            <a class="vid-thumb" data-avatar="J" href="https://www.youtube.com/watch?v=xngT71JsqVk"
+              target="_blank" rel="noopener">
+              <img class="vid-thumb-img" src="https://img.youtube.com/vi/xngT71JsqVk/hqdefault.jpg"
+                alt="" loading="lazy" />
+              <span class="vid-icons"><span class="vid-icon-btn">&#8599;</span><span
+                  class="vid-icon-btn">&#9201;</span></span>
+              <span class="vid-play">&#9658;</span>
+              <span class="vid-avatar-row"><span class="vid-avatar">J</span><span
+                  class="vid-thumb-channel">Jyovis Ayurveda</span></span>
+              <span class="vid-watch-pill">&#9658; Watch on YouTube</span>
+            </a>
+            <div class="vid-card-body">
+              <div class="vid-meta-row">
+                <span class="vid-tag vid-tag--promoter">Promoter</span>
+                <span class="vid-stats">5.2K views &middot; 159K subscribers</span>
+              </div>
+              <div class="vid-author">Dr Raj Satpute &middot; Jyovis Ayurveda by Dr. Raj</div>
+              <h3 class="vid-title">Cow urine benefits, precautions — complete information</h3>
+              <div class="vid-divider"></div>
+              <p class="vid-commentary">"For thousands of years, cow urine has been used to prevent and
+                eradicate incurable diseases from their root." The longevity of a practice is
+                substituted for proof of its efficacy. Neither claim is defended in the sentence.</p>
+            </div>
+          </article>
+
+          <article class="vid-card">
+            <a class="vid-thumb" data-avatar="S" href="https://www.youtube.com/watch?v=X6VWGgRn2N8"
+              target="_blank" rel="noopener">
+              <img class="vid-thumb-img" src="https://img.youtube.com/vi/X6VWGgRn2N8/hqdefault.jpg"
+                alt="" loading="lazy" />
+              <span class="vid-icons"><span class="vid-icon-btn">&#8599;</span><span
+                  class="vid-icon-btn">&#9201;</span></span>
+              <span class="vid-play">&#9658;</span>
+              <span class="vid-avatar-row"><span class="vid-avatar">S</span><span
+                  class="vid-thumb-channel">Times Now Navbharat</span></span>
+              <span class="vid-watch-pill">&#9658; Watch on YouTube</span>
+            </a>
+            <div class="vid-card-body">
+              <div class="vid-meta-row">
+                <span class="vid-tag vid-tag--promoter">Promoter</span>
+                <span class="vid-stats">621K views &middot; 23.7M subscribers</span>
+              </div>
+              <div class="vid-author">Sushant Sinha &middot; Times Now Navbharat</div>
+              <h3 class="vid-title">Agenda-driven people attacked ancient practices</h3>
+              <div class="vid-divider"></div>
+              <p class="vid-commentary">"Have the agenda-driven people specifically attacked the ancient
+                practices by dismissing what Ayurveda says?" "Agenda-driven" lets him skip past the
+                substance of any critique. "Attacked" changes intellectual disagreement into violence
+                against a community.</p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =================== MENTIONS (standalone page) =================== -->
+    <section class="page" id="mentions">
+      <div class="mentions-hero dark-hero">
+        <img class="mentions-hero-bg" src="https://ananyasharedalal.com/images/mentions-hero.png"
+          alt="Ancient Indian library" />
+        <div class="mentions-hero-inner">
+          <div class="eyebrow">In the World</div>
+          <h1 class="mentions-title">Talks &amp;<br><em>Publications</em></h1>
+          <div class="mentions-rule"></div>
+          <p class="mentions-hero-lede">This study has formed a part of talks and a peer-reviewed paper
+            by my project mentor Prof Joyojeet Pal, University of Michigan, and his team of
+            co-researchers.</p>
+        </div>
+      </div>
+
+      <div class="mentions-empty">
+        <p>No mentions yet.</p>
+      </div>
+
+      <div class="mentions-ongoing">
+        <p>This research is ongoing. More presentations and publications are expected as the project
+          develops.</p>
+        <div class="mentions-ongoing-rule"></div>
+      </div>
+    </section>
+
+    <!-- =================== PAPER (standalone page) =================== -->
+    <section class="page" id="paper">
+      <div class="paper-hero dark-hero">
+        <img class="paper-hero-bg" src="https://ananyasharedalal.com/images/gomutra-paper-hero.png"
+          alt="Old books and manuscripts" />
+        <div class="paper-hero-inner">
+          <div class="eyebrow">The Paper</div>
+          <h1 class="paper-title">The Role of History<br><em>in the Acceptance of Gomutra</em></h1>
+          <div class="paper-rule"></div>
+          <p class="paper-hero-lede">How YouTube's gomutra discourse is quietly rewriting Indian
+            history — one wellness video at a time.</p>
+        </div>
+      </div>
+
+      <div class="paper-content">
+        <div class="paper-content-inner">
+
+          <div class="chapter-eyebrow">Introduction</div>
+          <div class="chapter-rule"></div>
+          <h2 class="chapter-heading">Introduction</h2>
+          <p>Before getting into the analytics, it's worth discussing why cow urine of all things
+            merits a whole paper. Gomutra sits at this unusual intersection where almost every faultline
+            in contemporary India meets at once: Hindu religious practice (the cow is sacred),
+            traditional medicine (it shows up in Ayurvedic texts), a multi-crore wellness industry (Baba
+            Ramdev's company <a class="paper-link" href="#">Patanjali</a> alone sells huge volumes of
+            bottled cow urine under the brand Godhan Ark), and pseudoscience claims that have reached
+            cabinet ministers and prime-time news anchors. What makes it useful as a case study is that
+            the same yellow liquid gets framed as scripture, medicine, product, identity marker, and
+            political tool, sometimes in the same video. Few other Indian topics let you study religion,
+            science, commerce, and politics together in one corpus.</p>
+          <p>As you enter the gomutra sphere on YouTube, there is something that catches your attention
+            right off the bat. People are not just discussing the healing properties of cow urine, and
+            whether or not it can actually cure cancer; they are debating what kind of history India has
+            had, and whose historical authority should take precedence. A <a class="paper-link"
+              href="#">Patanjali</a> wellness video and a debunker video by <a class="paper-link"
+              href="#">Dhruv Rathee</a> (one of India's most followed YouTubers, known for political
+            commentary and myth-debunking content with audiences in the tens of millions) both seem to be
+            participating in the same discourse, yet their rhetoric and evidence couldn't be more
+            different.</p>
+          <p>The actual purpose of this paper is narrower than it might sound. I'm not trying to settle
+            whether cow urine works. I'm using gomutra as a small, somewhat manageable window into a much
+            bigger thing: how Indian public memory is being shaped on YouTube in real time. What I care
+            about is the <em>historiography</em>: which historical periods get amplified, which get
+            erased, and who gets to be the authority on "what India was like" and what that means for
+            Indians today. Cow urine is just a convenient case because that's one of the windows into a
+            much larger pattern.</p>
+
+          <div class="chapter-eyebrow">Methodology</div>
+          <div class="chapter-rule"></div>
+          <h2 class="chapter-heading">Methodology</h2>
+          <p>I started with the 100 most-viewed gomutra-related videos on YouTube and ended up with 83
+            in the final dataset. The 17 that dropped out broke down roughly as follows: around 5 were
+            duplicates or re-uploads of the same content on different channels, 6 weren't really about
+            gomutra (it was mentioned in passing inside a longer wellness or religious video), 4 didn't
+            have usable transcripts (no auto-captions, or in languages I couldn't reliably translate), and
+            2 were too short to code anything meaningful. The remaining 83 YouTube videos about gomutra
+            mix promoter content (<a class="paper-link" href="#">Patanjali ads</a>, Ayurveda channels,
+            wellness influencers, nightly-news segments) and debunker content (<a class="paper-link"
+              href="#">Dhruv Rathee</a>, <a class="paper-link" href="#">Dr. Ram Punyani</a>, a couple of
+            medical doctors). I went for the most-viewed videos in each camp rather than a random sample
+            because the goal was to see what's actually shaping the conversation about gomutra.</p>
+          <p>For each video I got the auto-generated transcript, translated all of them into English
+            using LLMs, and then verified the result of the translations myself. I subsequently coded the
+            videos into categories like views, gender of channel, themes, content style, narrative style,
+            claimed benefits, named ancient texts, mentions of rishis or sages, references to the West,
+            political mentions, and any explicit historical periodisation.</p>
+
+          <div class="table-scroll"><table class="paper-table">
+            <caption>Table 1: Sample description</caption>
+            <thead>
+              <tr>
+                <th>Variable</th>
+                <th>Category</th>
+                <th>Total (n = 83)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Views</td>
+                <td>Mean per video</td>
+                <td>1,027,214</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>Median per video</td>
+                <td>91,000</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>Total</td>
+                <td>84,231,546</td>
+              </tr>
+              <tr>
+                <td>Gender of channel</td>
+                <td>Male</td>
+                <td>54</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>Female</td>
+                <td>9</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>Neutral / organisation</td>
+                <td>20</td>
+              </tr>
+              <tr>
+                <td>Content style</td>
+                <td>Monologue</td>
+                <td>47</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>Interview</td>
+                <td>11</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>News report</td>
+                <td>10</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>Repurposed clips</td>
+                <td>8</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>AI-generated</td>
+                <td>5</td>
+              </tr>
+              <tr>
+                <td>Narrative style</td>
+                <td>Promotional / testimonial</td>
+                <td>25</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>Explainer / factual</td>
+                <td>11</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>Devotional / faith-based</td>
+                <td>6</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>Opinionated / political</td>
+                <td>8</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td>Not coded</td>
+                <td>33</td>
+              </tr>
+            </tbody>
+          </table></div>
+
+          <p><a class="paper-link"
+              href="https://docs.google.com/spreadsheets/d/1sL5OCSKUtZv3nrFb4C7ct3ZXCcCEMgzDfk0wVSu1970/edit?usp=sharing"
+              target="_blank" rel="noopener">Entire sample of YouTube videos available here.</a></p>
+
+          <p>Prior to starting my analysis, I read up on the basic methods of qualitative research
+            analysis. Going through 83 transcripts line by line for qualitative analysis would have taken
+            extremely long, so I used LLMs to pull out quotes, tag subthemes, and flag which historical
+            references came up where. I then went back and manually verified every single quote against
+            the original transcript myself, especially the ones I planned to actually use in the paper.
+            Anything that didn't match got dropped.</p>
+          <p>One limitation worth bringing to attention is that I only looked at gomutra. I can't say yet
+            whether the same historical pattern holds for yoga or general Ayurveda channels. That could
+            be the next step.</p>
+
+          <div class="chapter-eyebrow">Main Findings</div>
+          <div class="chapter-rule"></div>
+          <h2 class="chapter-heading">Main Findings</h2>
+          <p>A lot of patterns came out of the coding (claim-bundling, the "Ramdev formula," debunkers
+            getting more views than promoters even though they're outnumbered 5:1, etc.).</p>
+          <p>One of the cleaner patterns in the data is that gomutra claims almost never travel alone. If
+            a video tells you cow urine is good for your liver, it'll usually also tell you it's good for
+            your kidneys, your weight, your skin, and your digestion in the same breath. Barely anyone
+            out there is pitching cow urine for <em>just</em> one thing. And the bundling isn't random, it
+            follows a reasonably predictable ladder.</p>
+          <p>At the base are the everyday, plausible-sounding claims: constipation and digestion (32 of
+            83 videos), skin and hair (21), obesity (16). The middle level is chronic disease — liver
+            (23), kidney (14), immunity (14), joint pain (11), diabetes (7). As we notice most of these
+            are chronic conditions for which there is no clear short-term cure, due to which is that
+            someone may end up using these unproven 'medicines' for several months to find no results.
+            And even then, they may be told that some or another aspect of how they used the medicine was
+            incorrect causing it not to have a desired effect.</p>
+          <p>At the very top sit the grand claims: cancer (25 videos) and the "there's literally gold in
+            cow urine" claim (only 2 creators say it, but debunkers love to attack it). The pattern is
+            that promoters almost always <em>lead</em> with the small believable claims before escalating
+            to the big ones. By the time a viewer has nodded along to "it helps with constipation,"
+            they're already several "yes"es deep when the cancer cure shows up. The structure is doing
+            rhetorical work that no single claim could do on its own.</p>
+          <p>The single most revealing experiment in the whole dataset is that Baba Ramdev and Dhruv
+            Rathee, the loudest promoter and the loudest debunker in the dataset, built entire videos
+            around the exact same trick. Baba Ramdev's setup is short and visual. He pours a few drops of
+            betadine into a glass with water, adds cow urine, and within seconds the dark colour
+            disappears. He frames the colour change as proof that gomutra is neutralising toxins in real
+            time. Dhruv Rathee runs the identical experiment, except with his own urine instead of cow
+            urine, and gets the identical result. He doesn't need to argue with Baba Ramdev verbally, his
+            experiment does the talking. The "miracle" becomes just a magic trick the moment the same
+            trick works with his own urine.</p>
+
+          <figure class="paper-figure">
+            <img src="https://ananyasharedalal.com/images/go-1.png" alt="Dhruv Rathee's betadine experiment" />
+            <figcaption>Image 1: Dhruv Rathee's 'betadine experiment' using his own urine (<a
+                class="paper-link" href="#">link to YouTube video</a>)</figcaption>
+          </figure>
+          <figure class="paper-figure">
+            <img src="https://ananyasharedalal.com/images/go-2.png" alt="Baba Ramdev's betadine experiment" />
+            <figcaption>Image 2: Baba Ramdev's 'betadine experiment' using gomutra (<a class="paper-link"
+                href="#">link to YouTube video</a>)</figcaption>
+          </figure>
+
+          <p>I'm mainly going to focus on the two findings that have a direct implication for how history
+            is being understood in India, because that's what I think is genuinely new here. Many gomutra
+            videos are doing historiography without realising it. They're collectively writing a version
+            of the Indian past where Vedic medicine flows uninterrupted to today's bottle of Godhan Ark,
+            the Mughals and British never existed, and the West shows up only as verification. And the
+            debunker side, by sticking strictly to chemistry, has let that historiography go
+            unchallenged.</p>
+
+          <h3 class="sub-heading">3.1 The Past Refers Only to the Vedic Period</h3>
+          <p>The single most striking pattern in the dataset is how much of Indian history is missing.
+            Out of 83 videos, more than half participate in a kind of ancient framing but it's always the
+            same, ancient. There are zero references to the medieval, Mughal or colonial period and only
+            one mention of cow slaughter being banned. The story jumps directly from rishis to today. The
+            lines between history and mythology are often blurred. This is meant to imply that Indian
+            history has been a black hole between the Vedic period and today, essentially suggesting that
+            Indian history got pushed back by whatever happened in between.</p>
+          <p>Here's how the "Vedic" gets invoked, broken into subthemes:</p>
+
+          <div class="table-scroll"><table class="paper-table">
+            <caption>Table 1. How videos invoke the Vedic past (out of 83 videos)</caption>
+            <thead>
+              <tr>
+                <th>Subtheme</th>
+                <th>Count</th>
+                <th>Example</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Named ancient texts (Charaka, Sushruta, Ashtanga Hridaya, Bhavaprakasha)</td>
+                <td>26</td>
+                <td>"we have three great texts… Sushruta Samhita, Charaka Samhita, and Bhavaprakasha
+                  Nighantu" — Rakesh Agarwal</td>
+              </tr>
+              <tr>
+                <td>"Thousands of years ago" / "since ancient times"</td>
+                <td>12</td>
+                <td>"For thousands of years, cow urine has been used…" — Dr Raj Satpute</td>
+              </tr>
+              <tr>
+                <td>Rishis / sages / ancestors</td>
+                <td>13</td>
+                <td>"Vagbhata Rishi has described the 'Mutravarg'…" — Dr Rupali Jain</td>
+              </tr>
+              <tr>
+                <td>Vedas referenced</td>
+                <td>13</td>
+                <td>"in the Vedas, it is given the status of Amrit" — Rakesh Agarwal</td>
+              </tr>
+              <tr>
+                <td>Sacred vocabulary (Amrit, Vishaghna, Rasayana, Shivambhu)</td>
+                <td>scattered</td>
+                <td>"urine is called Vishagna or killer of all poisons" — Akshay Chopra</td>
+              </tr>
+            </tbody>
+          </table></div>
+
+          <figure class="paper-figure">
+            <img src="https://ananyasharedalal.com/images/go-3.png" alt="Dr Rupali Jain discussing Mutravarg" />
+            <figcaption>Image 3: Dr Rupali Jain discussing the Mutravarg (<a class="paper-link"
+                href="#">link to YouTube video</a>)</figcaption>
+          </figure>
+
+          <p>While the Vedas genuinely mention cow urine, treating them as a peer-reviewed medical source
+            conflates two separate errors. The medical error: "the Vedas aren't a scientific text, they're
+            religious literature, where medicine wasn't separated from ritual." The historical error: "even
+            if you grant the medical claim, what these videos do with the citations is a selective
+            rewriting of Indian history" — collapsing 2,000 years between the Vedas and the present into a
+            single undifferentiated "ancient times," even though the Charaka and Sushruta Samhitas were
+            written centuries after the Vedas and routinely disagreed with earlier sources.</p>
+
+          <h3 class="sub-heading">3.2 The West Shows Up as a Validator, Not a Destroyer</h3>
+          <p>This finding cut against the paper's expectations. In most Indian discourse around cow
+            protection and Hindutva politics, the West is cast as the destroyer of Indian local knowledge.
+            Here, it isn't — it's the endorser.</p>
+
+          <div class="table-scroll"><table class="paper-table">
+            <caption>Table 2: How the West is invoked</caption>
+            <thead>
+              <tr>
+                <th>Subtheme</th>
+                <th>Example</th>
+                <th>What's doing the work</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>American patent as proof</td>
+                <td>"America has granted it a patent." — Baba Ramdev, Sudhir Chaudhary</td>
+                <td>The word "patent," with no detail on scope</td>
+              </tr>
+              <tr>
+                <td>Big-name institutions</td>
+                <td>"NIH… AYUSH… International Journal…" — Lotus Pregnancy Care</td>
+                <td>Stacking acronyms</td>
+              </tr>
+              <tr>
+                <td>WHO certification</td>
+                <td>"Certified by the World Health Organization." — B.K. Sahu</td>
+                <td>The brand of WHO</td>
+              </tr>
+              <tr>
+                <td>Export markets as judges</td>
+                <td>"Singapore, Germany, America, Britain, UAE are buying." — Sushant Sinha</td>
+                <td>Foreign markets = validation</td>
+              </tr>
+              <tr>
+                <td>Western media as quality stamp</td>
+                <td>"Washington Post, New York Times, Guardian have praised…" — Sudhir Chaudhary</td>
+                <td>Newspaper names as authority</td>
+              </tr>
+            </tbody>
+          </table></div>
+
+          <figure class="paper-figure">
+            <img src="https://ananyasharedalal.com/images/go-4.png"
+              alt="Sudhir Chaudhary's video on gomutra insults" />
+            <figcaption>Image 4: Sudhir Chaudhary's video, "Do those who insult gomutra know this?" (<a
+                class="paper-link" href="#">link to YouTube video</a>)</figcaption>
+          </figure>
+
+          <p>The four U.S. patents most commonly referenced (US 6,410,059; 6,896,907; 7,235,262; and
+            7,297,659) are legal tests of novelty, not medical endorsements — yet phrases like "America has
+            granted a patent" are being used to end the conversation rather than open one.</p>
+          <p>Western respect becomes proof of value, and the argument shifts away from whether cow urine
+            actually works to whether Indians are loyal enough to their own tradition.</p>
+
+          <div class="chapter-eyebrow">Implications</div>
+          <div class="chapter-rule"></div>
+          <h2 class="chapter-heading">4. Implications</h2>
+
+          <h3 class="sub-heading">4.1 What Does This Mean for Young People Who Grow Up Watching This?</h3>
+          <p>The most striking structural feature of the gomutra content I analysed is not what it says,
+            but what it leaves out. No videos in this dataset mention the British and none mention the
+            Mughals. There is no story of loss, suppression, or reclamation — it is just a seamless jump
+            from ancient rishis straight to today's bottle of Godhan Ark, with roughly 2,000 years of
+            Indian history simply not spoken about. For a young person watching hours of this content, the
+            picture of the past that gets formed is one where India had extraordinary medical knowledge in
+            the Vedic period, this knowledge has existed uninterrupted ever since, and the only people who
+            doubt it are those with an "agenda." Sushant Sinha, on a channel with 625,000 views, puts it
+            plainly: <em>"have the agenda-driven people specifically attacked the ancient practices by
+              dismissing what Ayurveda says?"</em> The word "agenda-driven" does the magic here — it
+            bluntly discredits any critic, turning scepticism itself into evidence of bad faith.</p>
+          <p>The effect of this framing, when absorbed repeatedly, is a warped understanding of both
+            history and science. Because the Mughal and British periods are simply absent from this
+            discourse, young viewers are not learning that those periods produced their own contributions
+            to medicine, scholarship, and science — that Mughal-era physicians translated and brought
+            together Greek, Persian, and Indian medical traditions, or that the colonial period, for all
+            its downsides, introduced scientific methodologies that modern medicine now relies on.
+            Instead, the story they receive is that the Vedic period was when real knowledge existed, and
+            the only science worth trusting is the science that confirms what the rishis already knew.</p>
+
+          <h3 class="sub-heading">4.2 Implications for Understanding Medicine</h3>
+          <p>Debunkers who stay strictly within modern medicine's framework are vastly less effective — Dr
+            Navin Agrawal's rebuttal has 8,400 views against Rakesh Agarwal's 2.4 million. The deeper
+            problem is that people's understanding of medicine is being shaped by their understanding of
+            history. In the data, the influencers are winning — not because the claims are stronger, but
+            because the historical frame that supports them has been left completely unchallenged.</p>
+
+          <h3 class="sub-heading">4.3 Ayurveda in Indian Science Textbooks</h3>
+          <p>Under India's National Education Policy (NEP) 2020, Ayurveda has entered NCERT science
+            textbooks for Classes 6–8 — including a reference to the same <em>Ashtanga Hridaya Sutra
+              Sthana</em> that Dr Rupali Jain cites on YouTube, with 726,000 views, to authorise the
+            medical properties of cow urine.</p>
+
+          <figure class="paper-figure">
+            <img src="https://ananyasharedalal.com/images/go-5.png" alt="NCERT Class 6 Curiosity textbook reference" />
+            <figcaption>Image 5: The NCERT Class 6 <em>Curiosity</em> textbook, chapter "Materials Around
+              Us" (<a class="paper-link" href="#">link to PDF</a>)</figcaption>
+          </figure>
+
+          <p>When that same logic enters the science classroom through state-approved textbooks, it is no
+            longer just one influencer among many — it becomes the curriculum.</p>
+
+          <div class="chapter-eyebrow">Conclusion</div>
+          <div class="chapter-rule"></div>
+          <h2 class="chapter-heading">5. Conclusion</h2>
+          <p>This paper set out to answer a specific question: if the medical properties of gomutra are
+            largely unproven, why do so many people believe in them? The answer this study finds is that
+            belief is not being carried by chemistry. It is being carried by history, or more precisely,
+            by a very selective version of history.</p>
+          <p>Across all the promotional videos, the pattern is consistent: the ancient Vedic and Ayurvedic
+            past is invoked relentlessly (26 videos cite named Sanskrit texts, 13 cite the Vedas, 13
+            mention rishis and sages), while everything that happened between that golden past and the
+            present is simply absent. The West shows up not as a villain but as a validator, American
+            patents, Washington Post articles, NIH name-drops, ratifying what "history" already
+            established. And the debunkers, for all their reach (Dhruv Rathee's betadine video alone
+            accumulated 8.1 million views), never actually engage with this historical frame. They argue
+            about chemistry, the promoters argue on cultural grounds, and so the two sides never meet.</p>
+          <p>This study offers insight into how misinformation spreads in India. It's not through outright
+            political dialogue — videos that name Prime Minister Modi or the BJP actually get fewer views.
+            It works through cultural memory and of ancient authority, it works through what people hear
+            that makes them feel good about themselves in a sense. Viewers feel like they're learning
+            about their heritage, not being persuaded, but the ideas and messages they're taking in are one
+            where scepticism is "agenda-driven" and modern science only counts when it agrees with what the
+            rishis already knew.</p>
+          <p>Once that framework makes it into NCERT textbooks (which it already has, with Ayurveda
+            entering the Class 6 and 8 science curriculum under NEP 2020) it's no longer just a YouTube
+            problem. The same historical imagination that makes gomutra believable online will shape what
+            a generation of Indian children understands as science, and eventually, as medicine.</p>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =================== ASHA WORKERS =================== -->
+    <section class="page" id="asha">
+      <div class="asha-hero dark-hero">
+        <img class="asha-hero-bg" src="https://ananyasharedalal.com/images/asha-hero.png"
+          alt="ASHA worker walking through a village" />
+        <div class="asha-hero-inner">
+          <div class="eyebrow">The Field Study</div>
+          <h1 class="asha-title">The <em>Nirasha</em> of ASHAs</h1>
+          <p class="asha-subtitle">The Invisible Labour of India's Frontline Healthcare Workers</p>
+          <div class="asha-rule"></div>
+          <p class="asha-hero-lede">A qualitative field study based on interviews with three ASHA
+            workers and fifteen community members in Annamayya district, Andhra Pradesh.</p>
+        </div>
+      </div>
+
+      <div class="asha-band asha-band--dark" id="abstract">
+        <div class="asha-band-inner">
+          <div class="chapter-eyebrow">Abstract</div>
+          <div class="chapter-rule"></div>
+          <p>ASHA stands for Accredited Social Health Activist, but it also means "hope" in Hindi. Since
+            the introduction of the programme in 2005 under the National Rural Health Mission (NRHM),
+            over nine lakh ladies have been recruited in India's rural areas, and there is limited
+            documentation of their day-to-day working conditions. This report is based on qualitative
+            studies conducted with three ASHA workers, fifteen community members, and observations from
+            field rounds in a group of villages in Annamayya district, Andhra Pradesh. The findings
+            reveal that the official narrative of ASHAs as "part-time volunteers" is highly inappropriate
+            since their work is comparable to that of full-time workers on multiple fronts, including
+            maternal health, disease surveillance, digital reporting, and social welfare. These ASHA
+            workers are very modestly remunerated; they bear the cost of transportation, equipment, and
+            communication personally, and despite that, receive their dues irregularly. Further, this
+            paper brings forth the interrelated dynamic between poor pay, community perception and
+            disproportionate workload. The paper requests for a permanent classification of ASHA
+            workers, a simplified incentive system and meaningful representation of these ladies in
+            health policy decisions.</p>
+        </div>
+      </div>
+
+      <div class="asha-band asha-band--light">
+        <div class="asha-band-inner">
+          <div class="chapter-eyebrow">Introduction</div>
+          <div class="chapter-rule"></div>
+          <h2 class="chapter-heading">Introduction</h2>
+          <p>Community health in rural India is, as a matter of fact, held up by people who live right
+            next to the problem — women in villages, local midwives, and volunteers who know everyone in
+            their area. They know which house has a pregnant woman, which child has still not been
+            vaccinated, and which elderly man keeps forgetting his blood pressure medicine. In a country
+            where many villages still do not have access to medical clinics and hospitals, these
+            grassroots workers are the crucial first interface between these marginalised communities and
+            the public healthcare system. They translate what doctors say into the local language, carry
+            medicines over long distances, and build a kind of trust that the government itself has
+            struggled to build.</p>
+          <p>The ASHA (an acronym for Accredited Social Health Activist) programme was started in 2005
+            under the National Rural Health Mission (NRHM) and rolled out from 2006. The intention is to
+            have one trained female health worker for every one thousand people in a community or
+            village. ASHAs, wearing white sarees with a blue border, are recruited from the village itself
+            by women's groups, the Gram Sabha, and block officers, and they're generally supposed to be
+            women between the ages 25 and 45 who have studied till class 10 at least. Literacy
+            requirements may be relaxed if no suitable candidates are available. They work alongside the
+            Anganwadi system that was established in 1975 under the Integrated Child Development Services
+            Scheme and runs village centres for nutrition, pre-school education, and basic health
+            check-ups for children less than 6 years in age, pregnant women, and new mothers. Thus, most
+            of the rural maternal and child health in India is taken care of by the Anganwadi and ASHA
+            systems. Today, there are over nine lakh ASHA workers across the country, making it one of
+            the biggest community health worker programmes in the world.</p>
+          <p>The issue is, even though everyone talks about how important ASHA workers are, almost no one
+            really looks at what their actual day-to-day routines are like. A lot of what is written
+            about them is just quantitative data like the number of child immunisations completed or
+            institutional deliveries facilitated — the human side of the job, and the money and community
+            perception problems around it, rarely make it into the record. This report tries to fill
+            that gap through direct field interviews and observation.</p>
+        </div>
+      </div>
+
+      <div class="asha-band asha-band--deep">
+        <div class="asha-band-inner">
+          <div class="chapter-eyebrow">Literature Review</div>
+          <div class="chapter-rule"></div>
+          <h2 class="chapter-heading">Literature Review</h2>
+          <p>This section reviews what has already been written about ASHA workers. It is organised into
+            three themes: what studies say about their roles and how effective they are; their specific
+            role in maternal, child, and nutrition-related health, and the problems and challenges they
+            face. The section concludes with a brief discussion on what is missing from the existing
+            research, which is the gap this report is trying to fill.</p>
+          <p>Most of the literature describes ASHAs as the "first port of call" for rural health needs,
+            especially for women and children. Saxena, Kakkar, and Semwal (2012) looked at 150 ASHAs in
+            Haridwar district and found that the majority saw antenatal care, vaccinations, and family
+            planning as their main work, and a lot of them also saw the job as a way into future
+            employment. The National Health Mission's own writing describes ASHAs both as service
+            providers (they carry a basic drug kit that contains Oral Rehydration Salts, Iron &amp; Folic
+            Acid tablets, condoms, delivery kits and some basic Over The Counter medications) and as
+            activists who spread awareness about health and push the community to actually use the health
+            services that exist. What I saw in the field matches this almost completely: ASHAs in
+            Annamayya district carry medicine and vaccine boxes between villages, pick up vaccines weekly
+            from the PHC, run Non Communicable Disease (NCD) surveys door-to-door, and go with pregnant
+            women to the PHC or district hospital. But what doesn't show up in the official description is
+            how long their actual day is (usually a full 9am to 5pm day with no holidays) and how many
+            additional duties they handle, like dengue checks, Tuberculosis (TB) follow-ups and
+            registering participants for India's digital healthcare ecosystem, Ayushman Bharat Health
+            Account (ABHA).</p>
+          <p>A lot of studies also look at how ASHAs affect maternal and child health specifically.
+            Padda et al. (2013) and Gopalan, Mohanty and Das (2012) both link ASHA presence to higher
+            rates of institutional delivery and better antenatal care uptake in the areas they studied.
+            Ved et al. (2019) and Saprii et al. (2015) look more at the ASHA's own motivation and sense
+            of purpose, finding that community respect and a feeling of "doing good" often matter to
+            these workers as much as the incentive payments themselves. On the problems side, Bajpai and
+            Dholakia (2011) and Scott (2018) both flag the mismatch between the scale of an ASHA's
+            responsibilities and the honorary, incentive-based structure of her pay — a tension that this
+            report's own field interviews confirm directly.</p>
+
+          <div class="table-scroll"><table class="paper-table">
+            <caption>Table 2: ASHA Compensation Structure, Annamayya District (2025)</caption>
+            <thead>
+              <tr>
+                <th>Compensation Component</th>
+                <th>Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Fixed Monthly Honorarium</td>
+                <td>&#8377;10,000</td>
+              </tr>
+              <tr>
+                <td>Task-Based Incentives</td>
+                <td>&#8377;2,000&ndash;&#8377;4,000 (approx., often unpaid)</td>
+              </tr>
+              <tr>
+                <td>Gratuity on Retirement</td>
+                <td>&#8377;1.5 Lakh (after 30 years of service)</td>
+              </tr>
+              <tr>
+                <td>Maternity Leave Benefit</td>
+                <td>&#8377;60,000 for 180 days</td>
+              </tr>
+              <tr>
+                <td>Retirement Age</td>
+                <td>62 years</td>
+              </tr>
+              <tr>
+                <td>Employment Classification</td>
+                <td>Honorary / Voluntary (not permanent govt. employee)</td>
+              </tr>
+              <tr>
+                <td>ANM (for comparison)</td>
+                <td>&#8377;30,000/month + pension + 20 days leave/year</td>
+              </tr>
+            </tbody>
+          </table></div>
+          <p style="font-size:.95rem"><a class="paper-link"
+              href="https://careermeto.com/en/annamayya-asha-worker-salary-2025/" target="_blank"
+              rel="noopener">Source: careermeto.com — Annamayya ASHA worker salary 2025</a></p>
+        </div>
+      </div>
+
+      <div class="asha-band asha-band--light">
+        <div class="asha-band-inner">
+          <div class="chapter-eyebrow">Methodology</div>
+          <div class="chapter-rule"></div>
+          <h2 class="chapter-heading">Methodology</h2>
+          <p>This report uses a qualitative approach, which essentially means that the findings are
+            developed from conversations and direct observation rather than from surveys or statistical
+            data. This method was chosen because the answers sought (a day in the life of an ASHA worker,
+            her community's perception and treatment of her, and what it feels like to do this job in the
+            context of the money earned) are not the sort that a questionnaire can answer well.
+            Individuals' relationships with the healthcare system are layered and personal. Every attempt
+            was made to get the participants to describe these views in their own words. Statistics can
+            tell you that an ASHA worker vaccinated sixty per cent of the women in her community, but they
+            can't tell you why she walked two kilometres in the scorching heat to make that happen.</p>
+          <p>The fieldwork for this study was done in a cluster of small villages in a semi-arid rural
+            region. Agriculture, mainly groundnut, paddy, tomatoes, and millets, is the principal economic
+            activity in this region and it is essentially reliant on monsoon rains as only a small amount
+            of the land is irrigated. Public health infrastructure is poor: the closest complete hospital
+            is a long bus ride away and the roads often become unusable during the monsoon months.</p>
+          <p>Two villages were visited. One lay close to an all weather road and the other was at a
+            distance away from it. This criteria was chosen because the ability to commute and the access
+            to transport meaningfully changes a community's experience with the healthcare system and it
+            was therefore relevant to hear both perspectives.</p>
+          <p>Two groups of people were interviewed. The first was the ASHA workers for the area,
+            Chamundeshwari, Ammajan and Hemlata. These three ladies covered the chosen area collectively
+            so all of them were interviewed. The second group comprised fifteen members from the local
+            community recruited from people visiting the Rural Health Centre and from an immunisation
+            drive under way during the field visit. A conscious effort was made to assemble a diverse
+            group rather than the most convenient group available. The final sample included Hindu and
+            Muslim families, women and men, young and elderly residents.</p>
+
+          <div class="table-scroll"><table class="paper-table">
+            <caption>Table 1: Weekly and Monthly Schedule of ASHA Workers</caption>
+            <thead>
+              <tr>
+                <th>Day / Frequency</th>
+                <th>Activity</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Monday &ndash; Tuesday</td>
+                <td>Village rounds: antenatal follow-ups, household surveys, NCD screenings</td>
+              </tr>
+              <tr>
+                <td>Wednesday</td>
+                <td>Thettu subcentre &mdash; immunisation session + village rounds</td>
+              </tr>
+              <tr>
+                <td>Thursday</td>
+                <td>School and Anganwadi visits: iron tablets (6+yrs), Vitamin A, height/weight,
+                  deworming</td>
+              </tr>
+              <tr>
+                <td>Friday</td>
+                <td>Dry Day survey: larva/dengue checks, sanitation inspections, drain monitoring</td>
+              </tr>
+              <tr>
+                <td>Saturday</td>
+                <td>Anganwadi immunisation (rotating across four villages each month); iron syrup for
+                  ages 3&ndash;5</td>
+              </tr>
+              <tr>
+                <td>Sunday</td>
+                <td>Emergency standby; early finish if no urgent cases</td>
+              </tr>
+              <tr>
+                <td>3rd Friday</td>
+                <td>All pregnant women are escorted to Kurabalakota PHC</td>
+              </tr>
+              <tr>
+                <td>Twice monthly</td>
+                <td>All pregnant women to Madanapalle District Hospital; Village Health Nutrition Day;
+                  Village Health Sanitation Day</td>
+              </tr>
+              <tr>
+                <td>1st Tuesday</td>
+                <td>Compulsory ASHA meeting, Kurabalakota PHC</td>
+              </tr>
+              <tr>
+                <td>Monthly</td>
+                <td>Gram Sabha meeting</td>
+              </tr>
+            </tbody>
+          </table></div>
+        </div>
+      </div>
+
+      <div class="asha-band asha-band--deep" id="findings">
+        <div class="asha-band-inner">
+          <div class="chapter-eyebrow">Findings</div>
+          <div class="chapter-rule"></div>
+          <h2 class="chapter-heading">Findings</h2>
+
+          <h3 class="sub-heading" style="margin-top:0">What ASHA workers really do</h3>
+          <figure class="paper-figure">
+            <img src="https://ananyasharedalal.com/images/asha-3.jpg" alt="An ASHA worker detailing her work" />
+            <figcaption>Image 3: An ASHA worker, in the white saree, detailing the nature of her work</figcaption>
+          </figure>
+          <p>A typical working day for the ladies spoken to begins around nine in the morning and does
+            not have a clear end. The work is a mix of scheduled duties (immunisation drives, antenatal
+            check-ups) and unscheduled ones (a sudden fever in the village, a delivery starting at night).
+            None of the three women described a fixed number of working hours; all three described the
+            job as something that follows them home.</p>
+
+          <h3 class="sub-heading">Pay and money problems</h3>
+          <p>All three ASHAs described their pay as both too little and too unpredictable. Payments,
+            split between task-based incentives and a fixed honorarium, routinely arrive months late, and
+            the paperwork required to claim each incentive falls on the ASHA herself. Transportation,
+            phone recharge, and even printing costs for reporting are typically paid for out of pocket
+            first and reimbursed, if at all, much later.</p>
+
+          <h3 class="sub-heading">What the community thinks</h3>
+          <p>Community members largely respect the ASHAs personally, but several openly said they did
+            not think of the role as a "real job" — a perception directly tied to how little and how
+            irregularly ASHAs are paid. This, in turn, makes some of the ASHAs' persuasion work (urging a
+            hospital delivery, for instance) harder, since the community doesn't see the messenger as
+            professionally backed by the state.</p>
+
+          <h3 class="sub-heading">Problems in the system</h3>
+          <p>The incentive structure itself was a repeated complaint: too many small, separately claimed
+            incentive heads, each requiring its own paperwork and verification, which slows down payment
+            for everyone. None of the three ASHAs interviewed had access to formal social security —
+            no provident fund, no health insurance, no pension — despite years of continuous service.</p>
+        </div>
+      </div>
+
+      <div class="asha-band asha-band--light">
+        <div class="asha-band-inner">
+          <div class="chapter-eyebrow">Discussion</div>
+          <div class="chapter-rule"></div>
+          <h2 class="chapter-heading">Discussion</h2>
+          <p>The three themes that came up across the interviews – workload, pay, and community
+            perception – don't really stand on their own. They are interrelated and point to deeper
+            issues in the system. The ASHAs spoken to were doing substantially more than what their
+            original job description covered: maternal health visits, COVID follow-ups, NCD screening, TB
+            tracking, election duty, distributing iron tablets to young girls, and even helping fill out
+            Ayushman Bharat and Aadhaar-linked beneficiary lists. But the incentive structure hasn't
+            expanded with the workload. So they end up doing more work for the same unpredictable pay,
+            which then affects how their families and neighbours view the job. A few women mentioned that
+            their husbands or in-laws kept asking why they were "running around" so much for so little
+            money, and this constant questioning seemed to tire them more than the physical work itself.
+            The community perception piece isn't separate from the pay piece either. When people in the
+            village see that the government doesn't pay you a proper salary, they don't take the role as
+            seriously, and that makes it harder to do the actual work of convincing women to get safe
+            deliveries in the hospital or vaccinate their children. So pay shapes perception, perception
+            shapes how much cooperation an ASHA gets, and that in turn shapes how heavy her workload
+            feels. It's a loop, not three separate problems.</p>
+
+          <figure class="paper-figure">
+            <img src="https://ananyasharedalal.com/images/asha-5.jpg"
+              alt="School security pledge event attended during fieldwork" />
+            <figcaption>Image 4: A school event attended during the field visit, illustrating the range
+              of civic duties ASHAs and Anganwadi staff take on beyond healthcare</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="asha-band asha-band--deep" id="recommendations">
+        <div class="asha-band-inner">
+          <div class="chapter-eyebrow">Policy Recommendations</div>
+          <div class="chapter-rule"></div>
+          <h2 class="chapter-heading">Policy Recommendations</h2>
+          <p><em>Permanent employment.</em> The most fundamental shift the government could make is to
+            stop calling ASHAs "volunteers" and recognize them as permanent health workers with a fixed
+            monthly salary. Right now, their pay is split between the centre and state and is
+            unpredictable, which means in some months, an ASHA might earn &#8377;5,000 while doing the
+            same amount of effort as someone earning &#8377;10,000 in a different state. Several
+            state-level commissions and the 45th and 46th Indian Labour Conferences have already
+            recommended that ASHAs be classified as regular workers, but nothing has actually moved at
+            the central level. A guaranteed minimum monthly salary, even &#8377;15,000, with incentives
+            layered on top, would give these ladies some financial stability and also signal that their
+            work is taken seriously by the state.</p>
+          <p><em>Incentives.</em> Even if permanent employment takes time, the incentive structure itself
+            needs fixing. Currently there are over 60 different incentive heads, each with its own
+            paperwork and verification process, which is part of why payments get delayed for months.
+            Consolidating these into approximately 8&ndash;10 broader categories tied to outcomes
+            (maternal health, child health, NCDs, etc.) would reduce the administrative work for both
+            ASHAs and the PHC staff who process payments. Linking payments to a direct digital transfer
+            system with a public dashboard where ASHAs can see what they're owed would also reduce
+            dependence on supervisors who sometimes hold up payments. The ladies interviewed were upset
+            about the amount and equally about the unpredictability and the running around required to
+            actually receive their dues, if at all they do.</p>
+          <p><em>Social security.</em> ASHAs currently fall through almost every social security net in
+            the country. They don't get EPF, ESIC, gratuity, or a pension, even though many of them have
+            been doing this work for over a decade and treat it as their primary occupation. Extending
+            these benefits would acknowledge the long-term nature of the role. At the very least, health
+            insurance for the ASHA and her immediate family can be provided along with maternity
+            benefits (which is almost ironic given that they are the ones promoting institutional
+            deliveries), and a retirement amount that pays out after 10+ years of service.</p>
+          <p><em>Decision-making power.</em> ASHAs are almost never consulted when the incentive
+            structure or the scope of their duties is redesigned, even though they are the ones closest to
+            what actually works on the ground. Formal representation for ASHAs, through state and
+            district-level committees with real decision-making power rather than a purely advisory
+            role, would let policy catch up with what the ASHAs already know from experience.</p>
+        </div>
+      </div>
+
+      <div class="asha-band asha-band--light">
+        <div class="asha-band-inner">
+          <div class="chapter-eyebrow">Conclusion</div>
+          <div class="chapter-rule"></div>
+          <h2 class="chapter-heading">Conclusion</h2>
+          <p>This study found that ASHAs in the villages visited are carrying a workload that has
+            expanded far beyond their original role, while their pay remains unpredictable and their
+            position in the community is more uncertain than the official narrative suggests. The three
+            themes of workload, pay, and community perception are deeply tied together, and they all
+            point to a system that depends on ladies' labour without giving them the recognition,
+            security, or voice that the work deserves.</p>
+          <p>What this implies is that surface-level fixes like a small incentive raise here, a one-time
+            bonus there, are not going to solve anything. Findings from this case study suggest:
+            permanent employment, a fixed incentive structure, real social security and safety
+            provisions, and actual decision-making power for ASHAs themselves. Future research could
+            push this much further. A larger, multi-state sample would help show how much of what is
+            found in this work is specific to this region versus a national pattern. A longitudinal
+            study following the same ASHAs over a few years would capture how burnout and changing
+            policy actually play out in their lives. And a comparative study across states with very
+            different ASHA outcomes (say Kerala vs. Bihar) could help figure out which policy choices
+            actually make a difference.</p>
+        </div>
+      </div>
+
+      <div class="asha-band asha-band--deep" id="references">
+        <div class="asha-band-inner ref-block">
+          <div class="ref-header">
+            <h2 class="chapter-heading" style="margin:0">References</h2>
+            <button class="ref-toggle" type="button"
+              onclick="var b=this.closest('.ref-block');b.classList.toggle('open');this.textContent=b.classList.contains('open')?'▲ collapse':'▼ expand';">&#9660;
+              expand</button>
+          </div>
+          <ol class="ref-list">
+            <li>More, V. (2025, June 25). Annamayya ASHA Worker Salary 2025. Career Meto. <a
+                class="paper-link" href="https://careermeto.com/en/annamayya-asha-worker-salary-2025/"
+                target="_blank" rel="noopener">careermeto.com/en/annamayya-asha-worker-salary-2025/</a>
+            </li>
+            <li>Ministry of Health &amp; Family Welfare&mdash;Government of India. (n.d.). About
+              Accredited Social Health Activist (ASHA) :: National Health Mission. <a class="paper-link"
+                href="https://nhm.gov.in/index1.php?lang=1&level=1&sublinkid=150&lid=226" target="_blank"
+                rel="noopener">nhm.gov.in/index1.php?lang=1&amp;level=1&amp;sublinkid=150&amp;lid=226</a>
+            </li>
+            <li>The Hindu Bureau. (2026, February 23). ASHA workers stage protest demanding fixed
+              &#8377;18,000 salary and fulfilment of promises. The Hindu. <a class="paper-link"
+                href="https://www.thehindu.com/news/cities/Hyderabad/asha-workers-stage-protest-demanding-fixed-18000-salary-and-fulfilment-of-promises/article70667231.ece"
+                target="_blank" rel="noopener">thehindu.com/&hellip;/article70667231.ece</a></li>
+            <li>Chakraborty, R. (2026, February 24). The ASHA worker's mental health paradox. The Hindu.
+              <a class="paper-link"
+                href="https://www.thehindu.com/society/asha-workers-mental-health-paradox-rural-health-lack-of-incentive/article70147080.ece"
+                target="_blank" rel="noopener">thehindu.com/&hellip;/article70147080.ece</a>
+            </li>
+            <li>ASHA workers and honorarium. (2025, March 14). INSIGHTS IAS &mdash; Simplifying UPSC IAS
+              Exam Preparation. <a class="paper-link"
+                href="https://www.insightsonindia.com/2025/03/14/asha-workers-and-honorarium/"
+                target="_blank" rel="noopener">insightsonindia.com/2025/03/14/asha-workers-and-honorarium/</a>
+            </li>
+            <li>World Health Organization: WHO. (2021, December 3). ASHA &mdash; the driving force
+              behind India's public health services. <a class="paper-link"
+                href="https://www.who.int/india/news-room/feature-stories/detail/asha-the-driving-force-behind-india-s-public-health-services"
+                target="_blank" rel="noopener">who.int/&hellip;/asha-the-driving-force&hellip;</a></li>
+            <li>Prakash, P. (2022, May 28). Explained | All about India's ASHA workers, recipients of
+              WHO's Global Leaders Award. The Hindu. <a class="paper-link"
+                href="https://www.thehindu.com/news/national/explained-all-about-indias-asha-workers-recipients-of-whos-global-leaders-award/article65457663.ece"
+                target="_blank" rel="noopener">thehindu.com/&hellip;/article65457663.ece</a></li>
+            <li>Dudala, S. R., Ponna, S. N., Upadrasta, V. P., Bathina, H., Sadasivuni, R., Geddam, J. J.
+              B., &amp; Kapu, A. K. R. (2021). Assessment of gaps of knowledge and practices of frontline
+              community workers in Chandragiri Mandal, Chittoor district, Andhra Pradesh: maternal and
+              child health services. <em>International Journal of Community Medicine and Public
+                Health, 8</em>(3), 1299. <a class="paper-link"
+                href="https://doi.org/10.18203/2394-6040.ijcmph20210817" target="_blank"
+                rel="noopener">doi.org/10.18203/2394-6040.ijcmph20210817</a></li>
+            <li>Swarna, S. (2026). Knowledge of Accredited Social Health Activists on SDGs, Maternal
+              Health, Child Health, Reproductive Health in selected District of Andhra Pradesh.
+              <em>Galore International Journal of Applied Sciences and Humanities, 8</em>8. <a
+                class="paper-link" href="https://doi.org/10.52403/gijash.20260113" target="_blank"
+                rel="noopener">doi.org/10.52403/gijash.20260113</a></li>
+            <li>Biyyala, R., Moola, R. S. R., &amp; Arepalli, S. (2019). Evaluating the performance of
+              ASHA workers in rural and tribal areas in Kurnool division of Kurnool district, Andhra
+              Pradesh. <em>International Journal of Community Medicine and Public Health, 6</em>(8),
+              3418. <a class="paper-link" href="https://doi.org/10.18203/2394-6040.ijcmph20193464"
+                target="_blank" rel="noopener">doi.org/10.18203/2394-6040.ijcmph20193464</a></li>
+            <li>Abdel-All, M., Abimbola, S., Praveen, D., &amp; Joshi, R. (2019). What do Accredited
+              Social Health Activists need to provide comprehensive care that incorporates
+              non-communicable diseases? Findings from a qualitative study in Andhra Pradesh, India.
+              <em>Human Resources for Health, 17</em>(1), 73. <a class="paper-link"
+                href="https://doi.org/10.1186/s12960-019-0418-9" target="_blank"
+                rel="noopener">doi.org/10.1186/s12960-019-0418-9</a></li>
+            <li>Sreerama, G., Matavalum, S., Chandresekharan, P., &amp; Thunga, V. (2015). Difficulties
+              in accessing and availing of public health care systems among rural population in
+              Chittoor District, Andhra Pradesh. <em>International Journal of Medicine and Public
+                Health, 5</em>(4), 265. <a class="paper-link" href="https://doi.org/10.4103/2230-8598.165085"
+                target="_blank" rel="noopener">doi.org/10.4103/2230-8598.165085</a></li>
+            <li>Saxena, V., Kakkar, R., &amp; Semwal, V. (2012). A study on ASHA &mdash; a change agent
+              of the society. <em>Indian Journal of Community Health, 24</em>(1), 15&ndash;18. <a
+                class="paper-link" href="https://www.cabdirect.org/cabdirect/abstract/20123357967"
+                target="_blank" rel="noopener">cabdirect.org/&hellip;/20123357967</a></li>
+            <li>Padda, P., Devgun, S., Gupta, V., Chaudhari, S., &amp; Singh, G. (2013, December 31).
+              Role of ASHA in improvement of maternal health status in northern India: an urban rural
+              comparison. <a class="paper-link"
+                href="https://www.iapsmupuk.org/journal/index.php/IJCH/article/view/357" target="_blank"
+                rel="noopener">iapsmupuk.org/&hellip;/article/view/357</a></li>
+            <li>Gopalan, S. S., Mohanty, S., &amp; Das, A. (2012). Assessing community health workers'
+              performance motivation: a mixed-methods approach on India's Accredited Social Health
+              Activists (ASHA) programme. <em>BMJ Open, 2</em>(5), e001557. <a class="paper-link"
+                href="https://doi.org/10.1136/bmjopen-2012-001557" target="_blank"
+                rel="noopener">doi.org/10.1136/bmjopen-2012-001557</a></li>
+            <li>Scott, K., George, A. S., &amp; Ved, R. R. (2019b). Taking stock of 10 years of published
+              research on the ASHA programme: examining India's national community health worker
+              programme from a health systems perspective. <em>Health Research Policy and Systems,
+                17</em>(1). <a class="paper-link" href="https://doi.org/10.1186/s12961-019-0427-0"
+                target="_blank" rel="noopener">doi.org/10.1186/s12961-019-0427-0</a></li>
+            <li>Scott, K., &amp; Shanker, S. (2010). Tying their hands? Institutional obstacles to the
+              success of the ASHA community health worker programme in rural north India. <em>AIDS Care,
+                22</em>(sup2), 1606&ndash;1612. <a class="paper-link"
+                href="https://doi.org/10.1080/09540121.2010.507751" target="_blank"
+                rel="noopener">doi.org/10.1080/09540121.2010.507751</a></li>
+            <li>Dholakia, R. H., &amp; Bajpai, N. (2011). Improving the performance of accredited social
+              health activists in India. <em>Columbia Academic Commons</em> (Columbia University). <a
+                class="paper-link" href="https://doi.org/10.7916/d8988g63" target="_blank"
+                rel="noopener">doi.org/10.7916/d8988g63</a></li>
+            <li>Scott, K., Beckham, S. W., Gross, M., Pariyo, G., Rao, K. D., Cometto, G., &amp; Perry,
+              H. B. (2018). What do we know about community-based health worker programs? A systematic
+              review of existing reviews on community health workers. <em>Human Resources for Health,
+                16</em>(1), 39. <a class="paper-link" href="https://doi.org/10.1186/s12960-018-0304-x"
+                target="_blank" rel="noopener">doi.org/10.1186/s12960-018-0304-x</a></li>
+            <li>Child Rights and You. (2026, March 31). What is Anganwadi System in India? Objectives
+              &amp; Necessity. CRY &mdash; Give Children a Happy, Healthy and Creative Childhood. <a
+                class="paper-link" href="https://www.cry.org/blog/anganwadi-system-in-india/"
+                target="_blank" rel="noopener">cry.org/blog/anganwadi-system-in-india/</a></li>
+            <li>ASHA | Roles, responsibilities, and benefits. (2025, July 30). <a class="paper-link"
+                href="https://www.doctutorials.com/guide/asha" target="_blank"
+                rel="noopener">doctutorials.com/guide/asha</a></li>
+            <li>Malhotra, R. K. M. D. (2025). Unrecognised pillars of public health: The struggles of
+              ASHA workers in India. <em>Vascular and Endovascular Review</em>. <a class="paper-link"
+                href="https://doi.org/10.64149/j.ver.8.15s.116-126" target="_blank"
+                rel="noopener">doi.org/10.64149/j.ver.8.15s.116-126</a></li>
+            <li>Sundararaman, T., Ved, R., Gupta, G., &amp; Samatha, M. (2012). Determinants of
+              functionality and effectiveness of community health workers: results from evaluation of
+              ASHA program in eight Indian states. <em>BMC Proceedings, 6</em>(S5). <a class="paper-link"
+                href="https://doi.org/10.1186/1753-6561-6-s5-o30" target="_blank"
+                rel="noopener">doi.org/10.1186/1753-6561-6-s5-o30</a></li>
+            <li>Ved, R., Scott, K., Gupta, G., Ummer, O., Singh, S., Srivastava, A., &amp; George, A. S.
+              (2019). How are gender inequalities facing India's one million ASHAs being addressed?
+              Policy origins and adaptations for the world's largest all-female community health worker
+              programme. <em>Human Resources for Health, 17</em>(1), 3. <a class="paper-link"
+                href="https://doi.org/10.1186/s12960-018-0338-0" target="_blank"
+                rel="noopener">doi.org/10.1186/s12960-018-0338-0</a></li>
+            <li>Renuka, B., Sreedevi, A., &amp; Paul, C. N. (2014). Impact of Educational Intervention on
+              Knowledge of Asha Workers about Their Job Responsibilities in Rural and Tribal Areas of
+              Kurnool Division in Kurnool District, Andhra Pradesh. <em>International Journal of
+                Scientific and Research Publications, 4</em>(11). <a class="paper-link"
+                href="https://www.ijsrp.org/research-paper-1114/ijsrp-p3526.pdf" target="_blank"
+                rel="noopener">ijsrp.org/research-paper-1114/ijsrp-p3526.pdf</a></li>
+            <li>Government of Andhra Pradesh, Women Development &amp; Child Welfare Department. (n.d.).
+              Evaluation of Accredited Social Health Activist (ASHA) in Andhra Pradesh. <a
+                class="paper-link" href="https://wdcw.ap.gov.in/Schemes/Saksham" target="_blank"
+                rel="noopener">wdcw.ap.gov.in/Schemes/Saksham</a></li>
+            <li>Role of ASHA workers in Andhra Pradesh &mdash; A review article. (2024). DNR College
+              Research Publication. <a class="paper-link"
+                href="https://www.dnrcollege.org/2024/3/3.4.3/P_37.pdf" target="_blank"
+                rel="noopener">dnrcollege.org/2024/3/3.4.3/P_37.pdf</a></li>
+            <li>Rural Health &mdash; Rishi Valley Education Centre. (n.d.). Rishi Valley Education
+              Centre. <a class="paper-link" href="https://www.rishivalley.org/rural-health-centre"
+                target="_blank" rel="noopener">rishivalley.org/rural-health-centre</a></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================== CONTACT =================== -->
+    <section class="page" id="contact">
+      <div class="contact-hero dark-hero">
+        <img class="contact-hero-bg" src="https://ananyasharedalal.com/images/contact-hero.png"
+          alt="Ancient writing desk" />
+        <div class="contact-hero-inner">
+          <p class="cta-eyebrow">Get in Touch</p>
+          <h1 class="cta-title">Contact</h1>
+          <div class="cta-rule"></div>
+          <p class="cta-lede">For research inquiries, collaboration proposals, media requests, or general
+            questions about my work.</p>
+        </div>
+      </div>
+
+      <section class="block contact-body" style="background-color: white;">
+        <div class="contact-grid">
+          <div class="contact-left">
+            <p class="contact-intro">Feel free to reach out directly — whether you're a researcher,
+              journalist, student, or just curious about my work.</p>
+            <div class="contact-divider"></div>
+            <p class="contact-label">Email</p>
+            <a class="contact-email" href="mailto:ananyasharedalal@gmail.com">ananyasharedalal@gmail.com</a>
+          </div>
+          <div class="contact-right">
+            <p class="contact-label" style="margin-bottom:1.25rem;color:#c97a1d">Reach Out About</p>
+            <div class="reach-list">
+              <div class="reach-item">
+                <h3 class="reach-out-about-headers">
+                  Research Inquiries</h3>
+                <p>Questions about Cow Urine Chronicles or other ongoing work.</p>
+              </div>
+              <div class="reach-item">
+                <h3 class="reach-out-about-headers">Collaboration Proposals</h3>
+                <p>Academic, journalistic, or policy-related opportunities.</p>
+              </div>
+              <div class="reach-item">
+                <h3 class="reach-out-about-headers">Media Requests</h3>
+                <p>Interviews, citations, talks, and public engagements.</p>
+              </div>
+              <div class="reach-item last">
+                <h3 class="reach-out-about-headers">General Questions</h3>
+                <p>Curious students, researchers, and readers are welcome.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+  </main>
+
+  <!-- =================== FOOTER =================== -->
+  <footer class="site">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div>
+          <div class="foot-brand">Ananya Sharedalal</div>
+          <p>Independent researcher working across historical narratives, developmental economics, and
+            the social concerns of communities. Based in Mumbai.</p>
+        </div>
+        <div>
+          <h4>Navigate</h4>
+          <ul class="foot-links">
+            <li><a data-nav="home">Home</a></li>
+            <li><a data-nav="gomutra">Cow Urine Chronicles</a></li>
+            <li><a data-nav="research">Research</a></li>
+            <li><a data-nav="themes">Themes</a></li>
+            <li><a data-nav="videos">Videos</a></li>
+            <li><a data-nav="mentions">Mentions</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>More</h4>
+          <ul class="foot-links">
+            <li><a data-nav="asha">ASHA Workers of Annamayya</a></li>
+            <li><a data-nav="asha" data-scroll="abstract">ASHA Mentions</a></li>
+            <li><a data-nav="contact">Contact</a></li>
+            <li><a href="mailto:ananyasharedalal@gmail.com">ananyasharedalal@gmail.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© <span id="yr"></span> Ananya Sharedalal. All rights reserved.</span>
+        <span>Mumbai</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /* ---------- Single-page router ---------- */
+    (function () {
+      var pages = document.querySelectorAll('.page');
+      var header = document.querySelector('header.site');
+      var brandArea = document.getElementById('brandArea');
+      var mainNav = document.getElementById('mainNav');
+      var currentPage = 'home';
+
+      // Per-page header configuration. `title` present => project-mode header
+      // (back arrow + project title). Otherwise a plain brand.
+      var HEADERS = {
+        home: {
+          brand: 'Ananya Sharedalal', darkHero: true,
+          nav: [['Home', 'home'], ['Contact', 'contact']]
+        },
+        contact: {
+          brand: 'Ananya Sharedalal', darkHero: true,
+          nav: [['Home', 'home'], ['Contact', 'contact']]
+        },
+        gomutra: {
+          back: 'Ananya Sharedalal', title: 'Cow Urine Chronicles', darkHero: true,
+          nav: [
+            ['Home', 'home'], ['Research', 'research'], ['Themes', 'themes'],
+            ['Videos', 'videos'], ['Mentions', 'mentions'], ['Paper', 'paper']
+          ]
+        },
+        research: {
+          back: 'Ananya Sharedalal', title: 'Cow Urine Chronicles', titleTarget: 'gomutra',
+          nav: [
+            ['Home', 'home'], ['Research', 'research'], ['Themes', 'themes'],
+            ['Videos', 'videos'], ['Mentions', 'mentions'], ['Paper', 'paper']
+          ]
+        },
+        themes: {
+          back: 'Ananya Sharedalal', title: 'Cow Urine Chronicles', titleTarget: 'gomutra',
+          nav: [
+            ['Home', 'home'], ['Research', 'research'], ['Themes', 'themes'],
+            ['Videos', 'videos'], ['Mentions', 'mentions'], ['Paper', 'paper']
+          ]
+        },
+        videos: {
+          back: 'Ananya Sharedalal', title: 'Cow Urine Chronicles', titleTarget: 'gomutra',
+          nav: [
+            ['Home', 'home'], ['Research', 'research'], ['Themes', 'themes'],
+            ['Videos', 'videos'], ['Mentions', 'mentions'], ['Paper', 'paper']
+          ]
+        },
+        mentions: {
+          back: 'Ananya Sharedalal', title: 'Cow Urine Chronicles', titleTarget: 'gomutra',
+          nav: [
+            ['Home', 'home'], ['Research', 'research'], ['Themes', 'themes'],
+            ['Videos', 'videos'], ['Mentions', 'mentions'], ['Paper', 'paper']
+          ]
+        },
+        paper: {
+          back: 'Ananya Sharedalal', title: 'Cow Urine Chronicles', titleTarget: 'gomutra',
+          nav: [
+            ['Home', 'home'], ['Research', 'research'], ['Themes', 'themes'],
+            ['Videos', 'videos'], ['Mentions', 'mentions'], ['Paper', 'paper']
+          ]
+        },
+        asha: {
+          back: 'Ananya Sharedalal', title: 'ASHA Workers of Annamayya', darkHero: true,
+          nav: [
+            ['Abstract', 'asha', 'abstract'], ['Findings', 'asha', 'findings'],
+            ['Policy', 'asha', 'recommendations'], ['Mentions', 'asha', 'references']
+          ]
+        }
+      };
+
+      function renderHeader(page) {
+        var cfg = HEADERS[page] || HEADERS.home;
+        // brand area
+        if (cfg.title) {
+          brandArea.innerHTML =
+            '<span class="brand-back" data-nav="home">&larr; ' + cfg.back + '</span>' +
+            '<span class="brand-sep">|</span>' +
+            '<span class="brand" data-nav="' + (cfg.titleTarget || page) + '">' + cfg.title + '</span>';
+        } else {
+          brandArea.innerHTML = '<span class="brand" data-nav="home">' + cfg.brand + '</span>';
+        }
+        // nav
+        mainNav.innerHTML = cfg.nav.map(function (item) {
+          var attrs = 'data-nav="' + item[1] + '"' + (item[2] ? ' data-scroll="' + item[2] + '"' : '');
+          var active = (item[1] === page && !item[2]) ? ' class="active"' : '';
+          return '<a ' + attrs + active + '>' + item[0] + '</a>';
+        }).join('');
+      }
+
+      // Header stays transparent whenever a dark-hero block is behind it (there can be
+      // more than one per page, e.g. Cow Urine Chronicles' top hero and its Research hero).
+      var overDark = new Set();
+      var headerObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) overDark.add(entry.target);
+          else overDark.delete(entry.target);
+        });
+        header.classList.toggle('solid', overDark.size === 0);
+      }, { rootMargin: '-70px 0px -92% 0px', threshold: 0 });
+      document.querySelectorAll('.dark-hero').forEach(function (el) { headerObserver.observe(el); });
+
+      function syncHeader() {
+        header.classList.toggle('solid', overDark.size === 0);
+      }
+
+      function showPage(id, scrollTo) {
+        var target = document.getElementById(id) ? id : 'home';
+        currentPage = target;
+        pages.forEach(function (p) { p.classList.toggle('active', p.id === target); });
+
+        renderHeader(target);
+
+        // update hash without jumping
+        if (history.replaceState) history.replaceState(null, '', '#' + target);
+
+        syncHeader();
+
+        // scroll: either to an in-page anchor or to the very top
+        if (scrollTo && document.getElementById(scrollTo)) {
+          setTimeout(function () {
+            document.getElementById(scrollTo).scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 60);
+        } else {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+      }
+
+      // Delegate all clicks that carry data-nav or data-scroll
+      document.addEventListener('click', function (e) {
+        var el = e.target.closest('[data-nav],[data-scroll]');
+        if (!el) return;
+        var nav = el.getAttribute('data-nav');
+        var scroll = el.getAttribute('data-scroll');
+
+        if (nav) {
+          e.preventDefault();
+          showPage(nav, scroll);
+        } else if (scroll) {
+          // in-page scroll within the current active page
+          e.preventDefault();
+          var t = document.getElementById(scroll);
+          if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+
+      // Open correct page from hash on load
+      var initial = (location.hash || '#home').replace('#', '');
+      showPage(initial);
+
+      document.getElementById('yr').textContent = (function () {
+        // avoid Date in build tooling; compute at runtime in browser
+        return new Date().getFullYear();
+      })();
+    })();
+  </script>
+
+</body>
+
+</html>
